@@ -1,0 +1,5358 @@
+{
+  "source": "bailian_llm_parsed",
+  "parser": "qwen-plus",
+  "model_count": 381,
+  "models": [
+    {
+      "model_id": "qwen-max",
+      "model_name": "通义千问Max",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 262144,
+        "max_input_tokens": 262144,
+        "max_output_tokens": 262144,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus",
+      "model_name": "通义千问Plus",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 1000000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-flash",
+      "model_name": "通义千问Flash",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 1000000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-coder",
+      "model_name": "通义千问Coder",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 1000000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-max",
+      "model_name": "qwen3-maxBatch调用半价上下文缓存享有折扣",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 252000,
+        "max_input_tokens": 252000,
+        "max_output_tokens": 252000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.0032,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0128,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.0064,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0256,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.0096,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0384,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-max-2025-09-23",
+      "model_name": "qwen3-max-2025-09-23",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 252000,
+        "max_input_tokens": 252000,
+        "max_output_tokens": 252000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.024,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.01,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.04,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.06,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-max-preview",
+      "model_name": "qwen3-max-preview上下文缓存享有折扣",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 252000,
+        "max_input_tokens": 252000,
+        "max_output_tokens": 252000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.024,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.01,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.04,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.06,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-max-latest",
+      "model_name": "qwen-max-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-max-2025-01-25",
+      "model_name": "qwen-max-2025-01-25",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-max-2024-09-19",
+      "model_name": "qwen-max-2024-09-19",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-max-2024-04-28",
+      "model_name": "qwen-max-2024-04-28",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 6000,
+        "max_output_tokens": 2000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-max-2024-04-03",
+      "model_name": "qwen-max-2024-04-03",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-latest",
+      "model_name": "qwen-plus-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 995904,
+        "max_input_tokens": 997952,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-12-01",
+      "model_name": "qwen-plus-2025-12-01",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 995904,
+        "max_input_tokens": 997952,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-09-11",
+      "model_name": "qwen-plus-2025-09-11",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 995904,
+        "max_input_tokens": 997952,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-07-28",
+      "model_name": "qwen-plus-2025-07-28",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 995904,
+        "max_input_tokens": 997952,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-07-14",
+      "model_name": "qwen-plus-2025-07-14",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-04-28",
+      "model_name": "qwen-plus-2025-04-28",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 98304,
+        "max_input_tokens": 129024,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-01-25",
+      "model_name": "qwen-plus-2025-01-25又称qwen-plus-0125",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-01-12",
+      "model_name": "qwen-plus-2025-01-12又称qwen-plus-0112",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2024-12-20",
+      "model_name": "qwen-plus-2024-12-20又称qwen-plus-1220",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2024-11-27",
+      "model_name": "qwen-plus-2024-11-27又称qwen-plus-1127",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2024-11-25",
+      "model_name": "qwen-plus-2024-11-25又称qwen-plus-1125",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2024-09-19",
+      "model_name": "qwen-plus-2024-09-19又称qwen-plus-0919",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 128000,
+        "max_input_tokens": 128000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2024-08-06",
+      "model_name": "qwen-plus-2024-08-06又称qwen-plus-0806",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 128000,
+        "max_input_tokens": 128000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2024-07-23",
+      "model_name": "qwen-plus-2024-07-23又称qwen-plus-0723",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32000,
+        "max_input_tokens": 30000,
+        "max_output_tokens": 8000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-flash-2025-07-28",
+      "model_name": "qwen-flash-2025-07-28",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 995904,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-turbo",
+      "model_name": "qwen-turbo",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-turbo-latest",
+      "model_name": "qwen-turbo-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-turbo-2025-07-15",
+      "model_name": "qwen-turbo-2025-07-15",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-turbo-2025-04-28",
+      "model_name": "qwen-turbo-2025-04-28",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-turbo-2024-11-01",
+      "model_name": "qwen-turbo-2024-11-01",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-turbo-2025-02-11",
+      "model_name": "qwen-turbo-2025-02-11又称qwen-turbo-0211",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-turbo-2024-09-19",
+      "model_name": "qwen-turbo-2024-09-19又称qwen-turbo-0919",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-turbo-2024-06-24",
+      "model_name": "qwen-turbo-2024-06-24又称qwen-turbo-0624",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 6000,
+        "max_output_tokens": 2000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwq-plus",
+      "model_name": "qwq-plus",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 98304,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwq-plus-latest",
+      "model_name": "qwq-plus-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwq-plus-2025-03-05",
+      "model_name": "qwq-plus-2025-03-05",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-long",
+      "model_name": "qwen-long",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 10000000,
+        "max_input_tokens": 10000000,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-long-latest",
+      "model_name": "qwen-long-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 10000000,
+        "max_input_tokens": 10000000,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-long-2025-01-25",
+      "model_name": "qwen-long-2025-01-25",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 10000000,
+        "max_input_tokens": 10000000,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-omni-flash",
+      "model_name": "qwen3-omni-flash",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 65536,
+        "max_input_tokens": 16384,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-omni-flash-2025-12-01",
+      "model_name": "qwen3-omni-flash-2025-12-01",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 65536,
+        "max_input_tokens": 16384,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-omni-flash-2025-09-15",
+      "model_name": "qwen3-omni-flash-2025-09-15",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 65536,
+        "max_input_tokens": 16384,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-omni-turbo",
+      "model_name": "qwen-omni-turbo",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-omni-turbo-latest",
+      "model_name": "qwen-omni-turbo-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-omni-turbo-2025-03-26",
+      "model_name": "qwen-omni-turbo-2025-03-26",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-omni-turbo-2025-01-19",
+      "model_name": "qwen-omni-turbo-2025-01-19",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-omni-flash-realtime",
+      "model_name": "qwen3-omni-flash-realtime",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 65536,
+        "max_input_tokens": 49152,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-omni-flash-realtime-2025-12-01",
+      "model_name": "qwen3-omni-flash-realtime-2025-12-01",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 65536,
+        "max_input_tokens": 49152,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-omni-flash-realtime-2025-09-15",
+      "model_name": "qwen3-omni-flash-realtime-2025-09-15",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 65536,
+        "max_input_tokens": 49152,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-omni-turbo-realtime",
+      "model_name": "qwen-omni-turbo-realtime",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-omni-turbo-realtime-latest",
+      "model_name": "qwen-omni-turbo-realtime-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-omni-turbo-realtime-2025-05-08",
+      "model_name": "qwen-omni-turbo-realtime-2025-05-08",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-max",
+      "model_name": "qvq-max",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 106496,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 16384
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-max-latest",
+      "model_name": "qvq-max-latest",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 106496,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 16384
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-max-2025-05-15",
+      "model_name": "qvq-max-2025-05-15",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 106496,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 16384
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-max-2025-03-25",
+      "model_name": "qvq-max-2025-03-25",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 106496,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 16384
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-plus",
+      "model_name": "qvq-plus",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 106496,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 16384
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-plus-latest",
+      "model_name": "qvq-plus-latest",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 106496,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 16384
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-plus-2025-05-15",
+      "model_name": "qvq-plus-2025-05-15",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 106496,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 16384
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-plus",
+      "model_name": "qwen3-vl-plus",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 262144,
+        "max_input_tokens": 258048,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-plus-2025-09-23",
+      "model_name": "qwen3-vl-plus-2025-09-23",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 258048,
+        "max_input_tokens": 258048,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-plus-2025-12-19",
+      "model_name": "qwen3-vl-plus-2025-12-19",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 258048,
+        "max_input_tokens": 258048,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-flash",
+      "model_name": "qwen3-vl-flash",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 258048,
+        "max_input_tokens": 258048,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-flash-2025-10-15",
+      "model_name": "qwen3-vl-flash-2025-10-15",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 258048,
+        "max_input_tokens": 258048,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max",
+      "model_name": "qwen-vl-max",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max-latest",
+      "model_name": "qwen-vl-max-latest",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max-2025-08-13",
+      "model_name": "qwen-vl-max-2025-08-13",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max-2025-04-08",
+      "model_name": "qwen-vl-max-2025-04-08",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max-2025-04-02",
+      "model_name": "qwen-vl-max-2025-04-02",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max-2025-01-25",
+      "model_name": "qwen-vl-max-2025-01-25",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max-2024-12-30",
+      "model_name": "qwen-vl-max-2024-12-30",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max-2024-11-19",
+      "model_name": "qwen-vl-max-2024-11-19",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max-2024-10-30",
+      "model_name": "qwen-vl-max-2024-10-30",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max-2024-08-09",
+      "model_name": "qwen-vl-max-2024-08-09",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus",
+      "model_name": "qwen-vl-plus",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus-latest",
+      "model_name": "qwen-vl-plus-latest",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus-2025-08-15",
+      "model_name": "qwen-vl-plus-2025-08-15",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus-2025-07-10",
+      "model_name": "qwen-vl-plus-2025-07-10",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus-2025-05-07",
+      "model_name": "qwen-vl-plus-2025-05-07",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus-2025-01-25",
+      "model_name": "qwen-vl-plus-2025-01-25",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus-2025-01-02",
+      "model_name": "qwen-vl-plus-2025-01-02",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus-2024-08-09",
+      "model_name": "qwen-vl-plus-2024-08-09",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-ocr",
+      "model_name": "qwen-vl-ocr",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 34096,
+        "max_input_tokens": 30000,
+        "max_output_tokens": 4096,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-ocr-latest",
+      "model_name": "qwen-vl-ocr-latest",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 38192,
+        "max_input_tokens": 8192,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-ocr-2025-11-20",
+      "model_name": "qwen-vl-ocr-2025-11-20",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-ocr-2025-08-28",
+      "model_name": "qwen-vl-ocr-2025-08-28",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 34096,
+        "max_input_tokens": 30000,
+        "max_output_tokens": 4096,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-ocr-2025-04-13",
+      "model_name": "qwen-vl-ocr-2025-04-13",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-ocr-2024-10-28",
+      "model_name": "qwen-vl-ocr-2024-10-28",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-ocr-1120",
+      "model_name": "qwen-vl-ocr-2025-11-20又称qwen-vl-ocr-1120基于Qwen3-VL架构，大幅提升文档解析、文字定位能力。",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 38192,
+        "max_input_tokens": 8192,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-audio-turbo",
+      "model_name": "qwen-audio-turbo",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 6000,
+        "max_output_tokens": 1500,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-audio-turbo-latest",
+      "model_name": "qwen-audio-turbo-latest",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 6144,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-audio-turbo-2024-12-04",
+      "model_name": "qwen-audio-turbo-2024-12-04",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 6000,
+        "max_output_tokens": 1500,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-audio-turbo-2024-08-07",
+      "model_name": "qwen-audio-turbo-2024-08-07",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 6000,
+        "max_output_tokens": 1500,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-math-plus",
+      "model_name": "qwen-math-plus",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 4096,
+        "max_input_tokens": 3072,
+        "max_output_tokens": 3072,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-math-turbo",
+      "model_name": "qwen-math-turbo",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-plus",
+      "model_name": "qwen3-coder-plus",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 997952,
+        "max_output_tokens": 65536,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-plus-2025-09-23",
+      "model_name": "qwen3-coder-plus-2025-09-23",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 997952,
+        "max_output_tokens": 65536,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-plus-2025-07-22",
+      "model_name": "qwen3-coder-plus-2025-07-22",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-flash",
+      "model_name": "qwen3-coder-flash",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-flash-2025-07-28",
+      "model_name": "qwen3-coder-flash-2025-07-28",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-coder-plus",
+      "model_name": "qwen-coder-plus",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-coder-plus-latest",
+      "model_name": "qwen-coder-plus-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-coder-plus-2024-11-06",
+      "model_name": "qwen-coder-plus-2024-11-06",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-coder-turbo",
+      "model_name": "qwen-coder-turbo",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-coder-turbo-latest",
+      "model_name": "qwen-coder-turbo-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-coder-turbo-2024-09-19",
+      "model_name": "qwen-coder-turbo-2024-09-19",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-mt-plus",
+      "model_name": "qwen-mt-plus属于Qwen3-MT",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 16384,
+        "max_input_tokens": 8192,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-mt-flash",
+      "model_name": "qwen-mt-flash属于Qwen3-MT",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-mt-lite",
+      "model_name": "qwen-mt-lite属于Qwen3-MT",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-mt-turbo",
+      "model_name": "qwen-mt-turbo属于Qwen3-MT",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-doc-turbo",
+      "model_name": "qwen-doc-turbo",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 262144,
+        "max_input_tokens": 253952,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-deep-research",
+      "model_name": "qwen-deep-research",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 997952,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-thinking",
+      "model_name": "qwen3-next-80b-a3b-thinking",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 126976,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-instruct",
+      "model_name": "qwen3-next-80b-a3b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 0
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-235b-a22b-thinking-2507",
+      "model_name": "qwen3-235b-a22b-thinking-2507",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 126976,
+        "max_input_tokens": 126976,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-235b-a22b-instruct-2507",
+      "model_name": "qwen3-235b-a22b-instruct-2507",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 0
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-30b-a3b-thinking-2507",
+      "model_name": "qwen3-30b-a3b-thinking-2507",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 126976,
+        "max_input_tokens": 126976,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-30b-a3b-instruct-2507",
+      "model_name": "qwen3-30b-a3b-instruct-2507",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 0
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-235b-a22b",
+      "model_name": "qwen3-235b-a22b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-235b-a22b-thinking",
+      "model_name": "qwen3-235b-a22b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 98304,
+        "max_input_tokens": null,
+        "max_output_tokens": 38912,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-32b",
+      "model_name": "qwen3-32b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-32b-thinking",
+      "model_name": "qwen3-32b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 98304,
+        "max_input_tokens": null,
+        "max_output_tokens": 38912,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-30b-a3b",
+      "model_name": "qwen3-30b-a3b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-30b-a3b-thinking",
+      "model_name": "qwen3-30b-a3b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 98304,
+        "max_input_tokens": null,
+        "max_output_tokens": 38912,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-14b",
+      "model_name": "qwen3-14b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-14b-thinking",
+      "model_name": "qwen3-14b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 98304,
+        "max_input_tokens": null,
+        "max_output_tokens": 38912,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-8b",
+      "model_name": "qwen3-8b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-8b-thinking",
+      "model_name": "qwen3-8b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 98304,
+        "max_input_tokens": null,
+        "max_output_tokens": 38912,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-4b",
+      "model_name": "qwen3-4b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-4b-thinking",
+      "model_name": "qwen3-4b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 98304,
+        "max_input_tokens": null,
+        "max_output_tokens": 38912,
+        "max_thinking_tokens": 38912
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-1.7b",
+      "model_name": "qwen3-1.7b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 28672
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-1.7b-thinking",
+      "model_name": "qwen3-1.7b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 28672,
+        "max_input_tokens": null,
+        "max_output_tokens": 30720,
+        "max_thinking_tokens": 28672
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-0.6b",
+      "model_name": "qwen3-0.6b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 30720,
+        "max_input_tokens": 30720,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 28672
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-0.6b-thinking",
+      "model_name": "qwen3-0.6b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 28672,
+        "max_input_tokens": null,
+        "max_output_tokens": 30720,
+        "max_thinking_tokens": 28672
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwq-32b",
+      "model_name": "qwq-32b",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 98304,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwq-32b-preview",
+      "model_name": "qwq-32b-preview",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-14b-instruct-1m",
+      "model_name": "qwen2.5-14b-instruct-1m",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-7b-instruct-1m",
+      "model_name": "qwen2.5-7b-instruct-1m",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-72b-instruct",
+      "model_name": "qwen2.5-72b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-32b-instruct",
+      "model_name": "qwen2.5-32b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-14b-instruct",
+      "model_name": "qwen2.5-14b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-7b-instruct",
+      "model_name": "qwen2.5-7b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-3b-instruct",
+      "model_name": "qwen2.5-3b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-1.5b-instruct",
+      "model_name": "qwen2.5-1.5b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-0.5b-instruct",
+      "model_name": "qwen2.5-0.5b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-72b-instruct",
+      "model_name": "qwen2-72b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 6144,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-57b-a14b-instruct",
+      "model_name": "qwen2-57b-a14b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 65536,
+        "max_input_tokens": 63488,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-7b-instruct",
+      "model_name": "qwen2-7b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 128000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-1.5b-instruct",
+      "model_name": "qwen2-1.5b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-0.5b-instruct",
+      "model_name": "qwen2-0.5b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen1.5-110b-chat",
+      "model_name": "qwen1.5-110b-chat",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32000,
+        "max_input_tokens": 30000,
+        "max_output_tokens": 8000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen1.5-72b-chat",
+      "model_name": "qwen1.5-72b-chat",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 2000,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen1.5-32b-chat",
+      "model_name": "qwen1.5-32b-chat",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen1.5-14b-chat",
+      "model_name": "qwen1.5-14b-chat",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 6000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen1.5-7b-chat",
+      "model_name": "qwen1.5-7b-chat",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen1.5-1.8b-chat",
+      "model_name": "qwen1.5-1.8b-chat",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32000,
+        "max_input_tokens": 30000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen1.5-0.5b-chat",
+      "model_name": "qwen1.5-0.5b-chat",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-72b-preview",
+      "model_name": "qvq-72b-preview",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 16384,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-omni-7b",
+      "model_name": "qwen2.5-omni-7b",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-omni-30b-a3b-captioner",
+      "model_name": "qwen3-omni-30b-a3b-captioner",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 65536,
+        "max_input_tokens": 32768,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-235b-a22b-thinking",
+      "model_name": "qwen3-vl-235b-a22b-thinking",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 126976,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-235b-a22b-instruct",
+      "model_name": "qwen3-vl-235b-a22b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 0
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-32b-thinking",
+      "model_name": "qwen3-vl-32b-thinking",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 126976,
+        "max_input_tokens": 126976,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-32b-instruct",
+      "model_name": "qwen3-vl-32b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 0
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-30b-a3b-thinking",
+      "model_name": "qwen3-vl-30b-a3b-thinking",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 126976,
+        "max_input_tokens": 126976,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-30b-a3b-instruct",
+      "model_name": "qwen3-vl-30b-a3b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 0
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-8b-thinking",
+      "model_name": "qwen3-vl-8b-thinking",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 126976,
+        "max_input_tokens": 126976,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-8b-instruct",
+      "model_name": "qwen3-vl-8b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": 0
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-vl-72b-instruct",
+      "model_name": "qwen2.5-vl-72b-instruct",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-vl-32b-instruct",
+      "model_name": "qwen2.5-vl-32b-instruct",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-vl-7b-instruct",
+      "model_name": "qwen2.5-vl-7b-instruct",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-vl-3b-instruct",
+      "model_name": "qwen2.5-vl-3b-instruct",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-vl-72b-instruct",
+      "model_name": "qwen2-vl-72b-instruct",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-vl-7b-instruct",
+      "model_name": "qwen2-vl-7b-instruct",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 32000,
+        "max_input_tokens": 30000,
+        "max_output_tokens": 2000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-vl-2b-instruct",
+      "model_name": "qwen2-vl-2b-instruct",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-v1",
+      "model_name": "qwen-vl-v1",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 6000,
+        "max_output_tokens": 1500,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-chat-v1",
+      "model_name": "qwen-vl-chat-v1",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-audio-instruct",
+      "model_name": "qwen2-audio-instruct",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 6000,
+        "max_output_tokens": 1500,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-audio-chat",
+      "model_name": "qwen-audio-chat",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-math-72b-instruct",
+      "model_name": "qwen2.5-math-72b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 4096,
+        "max_input_tokens": 3072,
+        "max_output_tokens": 3072,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-math-7b-instruct",
+      "model_name": "qwen2.5-math-7b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-math-1.5b-instruct",
+      "model_name": "qwen2.5-math-1.5b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-480b-a35b-instruct",
+      "model_name": "qwen3-coder-480b-a35b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 200000,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 200000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.024,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.009,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.036,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.06,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-30b-a3b-instruct",
+      "model_name": "qwen3-coder-30b-a3b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 200000,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 200000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.0015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.00225,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.009,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.00375,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-coder-32b-instruct",
+      "model_name": "qwen2.5-coder-32b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-coder-14b-instruct",
+      "model_name": "qwen2.5-coder-14b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-coder-7b-instruct",
+      "model_name": "qwen2.5-coder-7b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-coder-3b-instruct",
+      "model_name": "qwen2.5-coder-3b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-coder-1.5b-instruct",
+      "model_name": "qwen2.5-coder-1.5b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-coder-0.5b-instruct",
+      "model_name": "qwen2.5-coder-0.5b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-v3.2685b",
+      "model_name": "deepseek-v3.2685B 满血版",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 98304,
+        "max_output_tokens": 65536,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-v3.2-exp685b",
+      "model_name": "deepseek-v3.2-exp685B 满血版",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 98304,
+        "max_output_tokens": 65536,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-v3.1685b",
+      "model_name": "deepseek-v3.1685B 满血版",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-r1685b",
+      "model_name": "deepseek-r1685B 满血版",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 16384,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-r1-0528685b",
+      "model_name": "deepseek-r1-0528685B 满血版",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-v3671b",
+      "model_name": "deepseek-v3671B 满血版",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-r1-distill-qwen-1.5b",
+      "model_name": "deepseek-r1-distill-qwen-1.5b基于 Qwen2.5-Math-1.5B",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 32768,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 16384
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-r1-distill-qwen-7b",
+      "model_name": "deepseek-r1-distill-qwen-7b基于 Qwen2.5-Math-7B",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-r1-distill-qwen-14b",
+      "model_name": "deepseek-r1-distill-qwen-14b基于 Qwen2.5-14B",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "model_name": "deepseek-r1-distill-qwen-32b基于 Qwen2.5-32B",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-r1-distill-llama-8b",
+      "model_name": "deepseek-r1-distill-llama-8b基于 Llama-3.1-8B",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-r1-distill-llama-70b",
+      "model_name": "deepseek-r1-distill-llama-70b基于 Llama-3.3-70B",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "kimi-k2-thinking",
+      "model_name": "kimi-k2-thinking",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 262144,
+        "max_input_tokens": 229376,
+        "max_output_tokens": 16384,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "moonshot-kimi-k2-instruct",
+      "model_name": "Moonshot-Kimi-K2-Instruct",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 131072,
+        "max_output_tokens": 8192,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "glm-4.7",
+      "model_name": "glm-4.7",
+      "vendor": "zhipu",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 166000,
+        "max_input_tokens": 166000,
+        "max_output_tokens": 166000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.014,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.004,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.016,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "glm-4.6",
+      "model_name": "glm-4.6",
+      "vendor": "zhipu",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 166000,
+        "max_input_tokens": 166000,
+        "max_output_tokens": 166000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.014,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.004,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.016,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "glm-4.5",
+      "model_name": "glm-4.5",
+      "vendor": "zhipu",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 96000,
+        "max_input_tokens": 96000,
+        "max_output_tokens": 96000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.014,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.004,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.016,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "glm-4.5-air",
+      "model_name": "glm-4.5-air",
+      "vendor": "zhipu",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 96000,
+        "max_input_tokens": 96000,
+        "max_output_tokens": 96000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.0008,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": {
+            "price": 0.0012,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.008,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "abab6.5g-chat",
+      "model_name": "abab6.5g-chat",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 8000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "abab6.5t-chat",
+      "model_name": "abab6.5t-chat",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "abab6.5s-chat",
+      "model_name": "abab6.5s-chat",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 245000,
+        "max_input_tokens": 245000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-image-max",
+      "model_name": "qwen-image-max",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-image-max-2025-12-30",
+      "model_name": "qwen-image-max-2025-12-30",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-image-plus",
+      "model_name": "qwen-image-plus",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-image",
+      "model_name": "qwen-image",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-image-edit-plus",
+      "model_name": "qwen-image-edit-plus",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-image-edit-plus-2025-12-15",
+      "model_name": "qwen-image-edit-plus-2025-12-15",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-image-edit-plus-2025-10-30",
+      "model_name": "qwen-image-edit-plus-2025-10-30",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-image-edit",
+      "model_name": "qwen-image-edit",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "z-image-turbo",
+      "model_name": "z-image-turbo",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.6-t2i",
+      "model_name": "万相2.6",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.5-t2i-preview",
+      "model_name": "万相2.5 preview",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-t2i-plus",
+      "model_name": "万相2.2专业版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-t2i-flash",
+      "model_name": "万相2.2极速版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx2.1-t2i-plus",
+      "model_name": "万相2.1专业版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx2.1-t2i-turbo",
+      "model_name": "万相2.1极速版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx2.0-t2i-turbo",
+      "model_name": "万相2.0极速版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.1-t2i-plus",
+      "model_name": "wan2.1-t2i-plus",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.1-t2i-turbo",
+      "model_name": "wan2.1-t2i-turbo",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx-sketch-to-image-lite",
+      "model_name": "wanx-sketch-to-image-lite",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx-background-generation-v2",
+      "model_name": "wanx-background-generation-v2",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "facechain-facedetect",
+      "model_name": "facechain-facedetect",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "facechain-finetune",
+      "model_name": "facechain-finetune",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "facechain-generation",
+      "model_name": "facechain-generation",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wordart-texture",
+      "model_name": "文字纹理生成",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wordart-semantic",
+      "model_name": "文字变形",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "aitryon",
+      "model_name": "AI试衣-基础版",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "aitryon-plus",
+      "model_name": "AI试衣-Plus版",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "aitryon-parsing-v1",
+      "model_name": "AI试衣-图片分割",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "aitryon-refiner",
+      "model_name": "AI试衣-图片精修",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-tts-flash",
+      "model_name": "qwen3-tts-flash当前能力等同 qwen3-tts-flash-2025-11-27",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 600,
+        "max_input_tokens": 600,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-tts-flash-2025-11-27",
+      "model_name": "qwen3-tts-flash-2025-11-27",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-tts-flash-2025-09-18",
+      "model_name": "qwen3-tts-flash-2025-09-18",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-tts",
+      "model_name": "qwen-tts",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 512,
+        "max_output_tokens": 7680,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-tts-latest",
+      "model_name": "qwen-tts-latest",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 512,
+        "max_output_tokens": 7680,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-tts-2025-05-22",
+      "model_name": "qwen-tts-2025-05-22",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 512,
+        "max_output_tokens": 7680,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-tts-2025-04-10",
+      "model_name": "qwen-tts-2025-04-10",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 512,
+        "max_output_tokens": 7680,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-tts-vd-realtime-2025-12-16",
+      "model_name": "qwen3-tts-vd-realtime-2025-12-16",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-tts-vc-realtime-2025-11-27",
+      "model_name": "qwen3-tts-vc-realtime-2025-11-27",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-tts-flash-realtime",
+      "model_name": "qwen3-tts-flash-realtime",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-tts-flash-realtime-2025-11-27",
+      "model_name": "qwen3-tts-flash-realtime-2025-11-27",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-tts-flash-realtime-2025-09-18",
+      "model_name": "qwen3-tts-flash-realtime-2025-09-18",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-tts-realtime",
+      "model_name": "qwen-tts-realtime",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 512,
+        "max_output_tokens": 7680,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-tts-realtime-latest",
+      "model_name": "qwen-tts-realtime-latest",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-tts-realtime-2025-07-15",
+      "model_name": "qwen-tts-realtime-2025-07-15",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "cosyvoice-v3-plus",
+      "model_name": "cosyvoice-v3-plus",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "cosyvoice-v3-flash",
+      "model_name": "cosyvoice-v3-flash",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "cosyvoice-v2",
+      "model_name": "cosyvoice-v2",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "cosyvoice-v1",
+      "model_name": "cosyvoice-v1",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-livetranslate-flash",
+      "model_name": "qwen3-livetranslate-flash",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 53248,
+        "max_input_tokens": 49152,
+        "max_output_tokens": 4096,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-livetranslate-flash-2025-12-01",
+      "model_name": "qwen3-livetranslate-flash-2025-12-01",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 53248,
+        "max_input_tokens": 49152,
+        "max_output_tokens": 4096,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-livetranslate-flash-realtime",
+      "model_name": "qwen3-livetranslate-flash-realtime",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 53248,
+        "max_input_tokens": 49152,
+        "max_output_tokens": 4096,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-livetranslate-flash-realtime-2025-09-22",
+      "model_name": "qwen3-livetranslate-flash-realtime-2025-09-22",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 53248,
+        "max_input_tokens": 49152,
+        "max_output_tokens": 4096,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-asr-flash-filetrans",
+      "model_name": "qwen3-asr-flash-filetrans",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-asr-flash-filetrans-2025-11-17",
+      "model_name": "qwen3-asr-flash-filetrans-2025-11-17",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-asr-flash",
+      "model_name": "qwen3-asr-flash",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-asr-flash-2025-09-08",
+      "model_name": "qwen3-asr-flash-2025-09-08",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-audio-asr-2024-12-04",
+      "model_name": "qwen-audio-asr",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 6144,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-audio-asr-latest",
+      "model_name": "qwen-audio-asr-latest",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 6144,
+        "max_output_tokens": 2048,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-asr-flash-realtime",
+      "model_name": "qwen3-asr-flash-realtime",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-asr-flash-realtime-2025-10-27",
+      "model_name": "qwen3-asr-flash-realtime-2025-10-27",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "gummy-realtime-v1",
+      "model_name": "gummy-realtime-v1",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "gummy-chat-v1",
+      "model_name": "gummy-chat-v1",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "fun-asr",
+      "model_name": "fun-asr",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "fun-asr-2025-11-07",
+      "model_name": "fun-asr-2025-11-07",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "fun-asr-2025-08-25",
+      "model_name": "fun-asr-2025-08-25",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "fun-asr-mtl",
+      "model_name": "fun-asr-mtl",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "fun-asr-mtl-2025-08-25",
+      "model_name": "fun-asr-mtl-2025-08-25",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "fun-asr-realtime",
+      "model_name": "fun-asr-realtime",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "fun-asr-realtime-2025-11-07",
+      "model_name": "fun-asr-realtime-2025-11-07",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "fun-asr-realtime-2025-09-15",
+      "model_name": "fun-asr-realtime-2025-09-15",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "paraformer-v2",
+      "model_name": "paraformer-v2",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "paraformer-8k-v2",
+      "model_name": "paraformer-8k-v2",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "paraformer-v1",
+      "model_name": "paraformer-v1",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "paraformer-8k-v1",
+      "model_name": "paraformer-8k-v1",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "paraformer-mtl-v1",
+      "model_name": "paraformer-mtl-v1",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "paraformer-realtime-v2",
+      "model_name": "paraformer-realtime-v2",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "paraformer-realtime-v1",
+      "model_name": "paraformer-realtime-v1",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "paraformer-realtime-8k-v2",
+      "model_name": "paraformer-realtime-8k-v2",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "paraformer-realtime-8k-v1",
+      "model_name": "paraformer-realtime-8k-v1",
+      "vendor": "aliyun",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "sensevoice-v1",
+      "model_name": "sensevoice-v1",
+      "vendor": "other",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.6-t2v",
+      "model_name": "万相2.6。新增多镜头叙事能力，同时支持自动配音和传入自定义音频文件。",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.5-t2v-preview",
+      "model_name": "万相2.5 preview。支持自动配音和传入自定义音频文件。",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-t2v-plus",
+      "model_name": "万相2.2专业版。指令理解更准，运动稳定流畅生成，生成细节更丰富。",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx2.1-t2v-turbo",
+      "model_name": "万相2.1极速版。性价比高。",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx2.1-t2v-plus",
+      "model_name": "万相2.1专业版。画面更具质感。",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.1-t2v-turbo",
+      "model_name": "万相2.1极速版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.1-t2v-plus",
+      "model_name": "万相2.1专业版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.6-i2v",
+      "model_name": "万相2.6",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.5-i2v-preview",
+      "model_name": "万相2.5 preview",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-i2v-flash",
+      "model_name": "万相2.2极速版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-i2v-plus",
+      "model_name": "万相2.2专业版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        },
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx2.1-i2v-turbo",
+      "model_name": "万相2.1极速版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx2.1-i2v-plus",
+      "model_name": "万相2.1专业版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.1-i2v-turbo",
+      "model_name": "万相2.1极速版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.1-i2v-plus",
+      "model_name": "万相2.1专业版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [
+        {
+          "region": "cn-shanghai",
+          "input_price": null,
+          "output_price": null,
+          "thinking_input_price": null,
+          "thinking_output_price": null
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-kf2v-flash",
+      "model_name": "万相2.2极速版",
+      "vendor": "aliyun",
+      "category": "video",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx2.1-kf2v-plus",
+      "model_name": "万相2.1专业版",
+      "vendor": "aliyun",
+      "category": "video",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.6-r2v",
+      "model_name": "wan2.6-r2v",
+      "vendor": "other",
+      "category": "video",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-s2v-detect",
+      "model_name": "wan2.2-s2v-detect",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-s2v",
+      "model_name": "wan2.2-s2v",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-animate-move-std",
+      "model_name": "wan2.2-animate-move",
+      "vendor": "other",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-animate-move-pro",
+      "model_name": "wan2.2-animate-move",
+      "vendor": "other",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-animate-mix-std",
+      "model_name": "wan2.2-animate-mix",
+      "vendor": "other",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wan2.2-animate-mix-pro",
+      "model_name": "wan2.2-animate-mix",
+      "vendor": "other",
+      "category": "audio",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "animate-anyone-detect-gen2",
+      "model_name": "animate-anyone-detect-gen2",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "animate-anyone-template-gen2",
+      "model_name": "animate-anyone-template-gen2",
+      "vendor": "aliyun",
+      "category": "video",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "animate-anyone-gen2",
+      "model_name": "animate-anyone-gen2",
+      "vendor": "aliyun",
+      "category": "video",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "animate-anyone-detect",
+      "model_name": "animate-anyone-detect",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "animate-anyone",
+      "model_name": "animate-anyone",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "emo-detect-v1",
+      "model_name": "emo-detect-v1",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "emo-v1",
+      "model_name": "emo-v1",
+      "vendor": "aliyun",
+      "category": "video",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "emo-detect",
+      "model_name": "emo-detect",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "emo",
+      "model_name": "emo",
+      "vendor": "aliyun",
+      "category": "video",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "liveportrait-detect",
+      "model_name": "liveportrait-detect",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "liveportrait",
+      "model_name": "liveportrait",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "emoji-detect-v1",
+      "model_name": "emoji-detect-v1",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "emoji-v1",
+      "model_name": "emoji-v1",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "video-style-transform-720p",
+      "model_name": "video-style-transform",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "video-style-transform-540p",
+      "model_name": "video-style-transform",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "text-embedding-v4",
+      "model_name": "text-embedding-v4属于Qwen3-Embedding系列",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 8192,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "text-embedding-v3",
+      "model_name": "text-embedding-v3",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "text-embedding-v2",
+      "model_name": "text-embedding-v2",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": 2048,
+        "max_input_tokens": 2048,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "text-embedding-v1",
+      "model_name": "text-embedding-v1",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "text-embedding-async-v2",
+      "model_name": "text-embedding-async-v2",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": 100000,
+        "max_input_tokens": 100000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "text-embedding-async-v1",
+      "model_name": "text-embedding-async-v1",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-vl-embedding",
+      "model_name": "qwen2.5-vl-embedding",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": 1024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "tongyi-embedding-vision-plus",
+      "model_name": "tongyi-embedding-vision-plus",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": 1152,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "tongyi-embedding-vision-flash",
+      "model_name": "tongyi-embedding-vision-flash",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": 768,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "multimodal-embedding-v1",
+      "model_name": "multimodal-embedding-v1",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "specs": {
+        "max_context_length": 1024,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-rerank",
+      "model_name": "qwen3-rerank",
+      "vendor": "aliyun",
+      "category": "rerank",
+      "specs": {
+        "max_context_length": 30000,
+        "max_input_tokens": 30000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "gte-rerank-v2",
+      "model_name": "gte-rerank-v2",
+      "vendor": "other",
+      "category": "rerank",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "tongyi-intent-detect-v3",
+      "model_name": "tongyi-intent-detect-v3",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 8192,
+        "max_output_tokens": 1024,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-character-ja",
+      "model_name": "qwen-plus-character-ja",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 7680,
+        "max_output_tokens": 512,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "gui-plus",
+      "model_name": "gui-plus",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 256000,
+        "max_input_tokens": 254976,
+        "max_output_tokens": 32768,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus-2023-12-01",
+      "model_name": "通义千问VL快照版",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 6000,
+        "max_output_tokens": 2000,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "yi-large",
+      "model_name": "零一万物",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32000,
+        "max_input_tokens": 32000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "yi-medium",
+      "model_name": "yi-medium",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "yi-large-rag",
+      "model_name": "yi-large-rag",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 16000,
+        "max_input_tokens": 16000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "yi-large-turbo",
+      "model_name": "yi-large-turbo",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "dolly-12b-v2",
+      "model_name": "dolly-12b-v2",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3.3-70b-instruct",
+      "model_name": "llama3.3-70b-instruct",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 32000,
+        "max_input_tokens": 30000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3.2-3b-instruct",
+      "model_name": "llama3.2-3b-instruct",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3.2-1b-instruct",
+      "model_name": "llama3.2-1b-instruct",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3.1-405b-instruct",
+      "model_name": "llama3.1-405b-instruct",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3.1-70b-instruct",
+      "model_name": "llama3.1-70b-instruct",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3.1-8b-instruct",
+      "model_name": "llama3.1-8b-instruct",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3-70b-instruct",
+      "model_name": "llama3-70b-instruct",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 8000,
+        "max_input_tokens": 8000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3-8b-instruct",
+      "model_name": "llama3-8b-instruct",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama2-13b-chat-v2",
+      "model_name": "llama2-13b-chat-v2",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 4000,
+        "max_input_tokens": 4000,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama2-7b-chat-v2",
+      "model_name": "llama2-7b-chat-v2",
+      "vendor": "meta",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3.2-90b-vision-instruct",
+      "model_name": "llama3.2-90b-vision-instruct",
+      "vendor": "meta",
+      "category": "vision",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 8192,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "llama3.2-11b-vision",
+      "model_name": "llama3.2-11b-vision",
+      "vendor": "meta",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "baichuan2-13b-chat-v1",
+      "model_name": "baichuan2-13b-chat-v1",
+      "vendor": "baichuan",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 4096,
+        "max_input_tokens": 4096,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "baichuan2-7b-chat-v1",
+      "model_name": "baichuan2-7b-chat-v1",
+      "vendor": "baichuan",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "baichuan-7b-v1",
+      "model_name": "baichuan-7b-v1",
+      "vendor": "baichuan",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "chatglm3-6b",
+      "model_name": "chatglm3-6b",
+      "vendor": "zhipu",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 7500,
+        "max_input_tokens": 7500,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "chatglm-6b-v2",
+      "model_name": "chatglm-6b-v2",
+      "vendor": "zhipu",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 6500,
+        "max_input_tokens": 6500,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "ziya-llama-13b-v1",
+      "model_name": "ziya-llama-13b-v1",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "belle-llama-13b-2m-v1",
+      "model_name": "belle-llama-13b-2m-v1",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "chatyuan-large-v2",
+      "model_name": "chatyuan-large-v2",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "billa-7b-sft-v1",
+      "model_name": "billa-7b-sft-v1",
+      "vendor": "other",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx-style-cosplay-v1",
+      "model_name": "wanx-style-cosplay-v1",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wanx-ast",
+      "model_name": "wanx-ast",
+      "vendor": "aliyun",
+      "category": "vision",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "wordart-surnames",
+      "model_name": "wordart-surnames",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-0206",
+      "model_name": "qwen-plus-2024-02-06又称qwen-plus-0206",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_thinking_tokens": null
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "motionshop-video-detect",
+      "model_name": "motionshop-video-detect",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "motionshop-gen3d",
+      "model_name": "motionshop-gen3d",
+      "vendor": "other",
+      "category": "vision",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "motionshop-synthesis",
+      "model_name": "motionshop-synthesis",
+      "vendor": "other",
+      "category": "audio",
+      "specs": {},
+      "pricing": [],
+      "status": "active"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 78380,
+    "output_tokens": 72793,
+    "total_tokens": 151173
+  }
+}

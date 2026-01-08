@@ -1,0 +1,317 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "阿里云百炼模型价格数据",
+  "description": "从阿里云百炼帮助文档爬取的模型规格和价格信息",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "数据元信息",
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "数据来源URL"
+        },
+        "crawl_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "爬取时间"
+        },
+        "version": {
+          "type": "string",
+          "description": "数据版本号"
+        }
+      },
+      "required": ["source", "crawl_time"]
+    },
+    "models": {
+      "type": "array",
+      "description": "模型列表",
+      "items": {
+        "$ref": "#/definitions/Model"
+      }
+    }
+  },
+  "required": ["metadata", "models"],
+  
+  "definitions": {
+    "Model": {
+      "type": "object",
+      "description": "单个模型信息",
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "description": "模型唯一标识符（API调用名称）",
+          "examples": ["qwen3-max", "deepseek-v3", "qwen-vl-plus"]
+        },
+        "model_name": {
+          "type": "string",
+          "description": "模型显示名称",
+          "examples": ["通义千问Max", "DeepSeek-V3"]
+        },
+        "vendor": {
+          "type": "string",
+          "description": "模型厂商",
+          "enum": ["aliyun", "deepseek", "moonshot", "zhipu", "baichuan", "meta", "other"]
+        },
+        "category": {
+          "type": "string",
+          "description": "模型类别",
+          "enum": [
+            "text_generation",
+            "multimodal",
+            "vision",
+            "audio",
+            "embedding",
+            "rerank",
+            "image_generation",
+            "video_generation",
+            "speech_synthesis",
+            "speech_recognition",
+            "other"
+          ]
+        },
+        "sub_category": {
+          "type": "string",
+          "description": "子类别",
+          "examples": ["通用大语言模型", "视觉理解模型", "代码模型"]
+        },
+        "version_type": {
+          "type": "string",
+          "description": "版本类型",
+          "enum": ["stable", "latest", "snapshot", "preview", "deprecated"]
+        },
+        "version_date": {
+          "type": "string",
+          "description": "版本日期（快照版）",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "examples": ["2025-09-23"]
+        },
+        "description": {
+          "type": "string",
+          "description": "模型描述"
+        },
+        "capabilities": {
+          "type": "array",
+          "description": "模型能力标签",
+          "items": {
+            "type": "string"
+          },
+          "examples": [["复杂任务", "多步骤推理", "工具调用", "代码生成"]]
+        },
+        "specs": {
+          "$ref": "#/definitions/ModelSpecs"
+        },
+        "pricing": {
+          "type": "array",
+          "description": "不同地域的价格信息",
+          "items": {
+            "$ref": "#/definitions/RegionPricing"
+          }
+        },
+        "related_models": {
+          "type": "array",
+          "description": "相关模型（别名或其他版本）",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "type": "string",
+          "description": "模型状态",
+          "enum": ["active", "deprecated", "preview", "offline"]
+        }
+      },
+      "required": ["model_id", "vendor", "category", "pricing"]
+    },
+    
+    "ModelSpecs": {
+      "type": "object",
+      "description": "模型规格参数",
+      "properties": {
+        "max_context_length": {
+          "type": "integer",
+          "description": "最大上下文长度（Token数）",
+          "examples": [262144, 1000000, 131072]
+        },
+        "max_input_tokens": {
+          "type": "integer",
+          "description": "最大输入Token数"
+        },
+        "max_output_tokens": {
+          "type": "integer",
+          "description": "最大输出Token数",
+          "examples": [65536, 16384, 8192]
+        },
+        "max_thinking_tokens": {
+          "type": "integer",
+          "description": "最大思维链Token数（推理模型）"
+        },
+        "supported_modes": {
+          "type": "array",
+          "description": "支持的模式",
+          "items": {
+            "type": "string",
+            "enum": ["thinking", "non_thinking", "both"]
+          }
+        },
+        "input_modalities": {
+          "type": "array",
+          "description": "输入模态",
+          "items": {
+            "type": "string",
+            "enum": ["text", "image", "audio", "video"]
+          }
+        },
+        "output_modalities": {
+          "type": "array",
+          "description": "输出模态",
+          "items": {
+            "type": "string",
+            "enum": ["text", "image", "audio", "video"]
+          }
+        }
+      }
+    },
+    
+    "RegionPricing": {
+      "type": "object",
+      "description": "地域价格信息",
+      "properties": {
+        "region": {
+          "type": "string",
+          "description": "地域",
+          "enum": ["cn-beijing", "ap-southeast-1", "finance-cloud"],
+          "examples": ["cn-beijing"]
+        },
+        "region_name": {
+          "type": "string",
+          "description": "地域名称",
+          "examples": ["中国内地（北京）", "国际（新加坡）"]
+        },
+        "currency": {
+          "type": "string",
+          "description": "货币单位",
+          "enum": ["CNY", "USD"],
+          "default": "CNY"
+        },
+        "billing_type": {
+          "type": "string",
+          "description": "计费类型",
+          "enum": ["token", "character", "second", "image", "request", "voice"]
+        },
+        "supports_thinking_mode": {
+          "type": "boolean",
+          "description": "是否支持思考模式",
+          "default": false
+        },
+        "thinking_mode_same_price": {
+          "type": "boolean",
+          "description": "思考模式与非思考模式是否同价（仅当supports_thinking_mode=true时有意义）",
+          "default": true
+        },
+        "has_context_tiered_pricing": {
+          "type": "boolean",
+          "description": "是否有基于上下文长度的阶梯计价",
+          "default": false
+        },
+        "input_price": {
+          "$ref": "#/definitions/PriceInfo",
+          "description": "输入价格（无阶梯计价时使用）"
+        },
+        "output_price": {
+          "$ref": "#/definitions/PriceInfo",
+          "description": "输出价格（无阶梯计价时使用）"
+        },
+        "thinking_input_price": {
+          "$ref": "#/definitions/PriceInfo",
+          "description": "思考模式输入价格（仅当thinking_mode_same_price=false时使用）"
+        },
+        "thinking_output_price": {
+          "$ref": "#/definitions/PriceInfo",
+          "description": "思考模式输出价格（仅当thinking_mode_same_price=false时使用）"
+        },
+        "context_tiered_pricing": {
+          "type": "array",
+          "description": "基于上下文长度的阶梯计价（仅当has_context_tiered_pricing=true时使用）",
+          "items": {
+            "$ref": "#/definitions/ContextTieredPrice"
+          }
+        },
+        "batch_discount": {
+          "type": "number",
+          "description": "批量调用折扣比例（如0.5表示半价）",
+          "examples": [0.5]
+        },
+        "effective_date": {
+          "type": "string",
+          "format": "date",
+          "description": "价格生效日期"
+        }
+      },
+      "required": ["region", "billing_type"]
+    },
+    
+    "PriceInfo": {
+      "type": "object",
+      "description": "价格信息",
+      "properties": {
+        "price": {
+          "type": "number",
+          "description": "单价"
+        },
+        "unit": {
+          "type": "string",
+          "description": "计价单位",
+          "examples": ["千Token", "万字符", "秒", "张", "次", "音色"]
+        },
+        "unit_quantity": {
+          "type": "integer",
+          "description": "单位数量",
+          "default": 1000,
+          "examples": [1000, 10000]
+        }
+      },
+      "required": ["price", "unit"]
+    },
+    
+    "ContextTieredPrice": {
+      "type": "object",
+      "description": "基于上下文长度的阶梯价格",
+      "properties": {
+        "context_min": {
+          "type": "integer",
+          "description": "上下文长度下限（Token数，不含）",
+          "examples": [0, 32000, 128000]
+        },
+        "context_max": {
+          "type": "integer",
+          "description": "上下文长度上限（Token数，含）",
+          "examples": [32000, 128000, 252000]
+        },
+        "context_label": {
+          "type": "string",
+          "description": "上下文范围标签",
+          "examples": ["0<Token≤32K", "32K<Token≤128K", "128K<Token≤252K"]
+        },
+        "input_price": {
+          "type": "number",
+          "description": "非思考模式输入单价（每千Token）"
+        },
+        "output_price": {
+          "type": "number",
+          "description": "非思考模式输出单价（每千Token）"
+        },
+        "thinking_input_price": {
+          "type": "number",
+          "description": "思考模式输入单价（每千Token），如果与非思考模式同价则不填"
+        },
+        "thinking_output_price": {
+          "type": "number",
+          "description": "思考模式输出单价（每千Token），如果与非思考模式同价则不填"
+        }
+      },
+      "required": ["context_label", "input_price", "output_price"]
+    }
+  }
+}

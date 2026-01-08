@@ -1,0 +1,604 @@
+{
+  "source": "bailian_llm_v2_parsed",
+  "parser": "qwen-plus",
+  "model_count": 12,
+  "models": [
+    {
+      "model_id": "qwen-max",
+      "model_name": "通义千问Max",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 262144,
+        "max_input_tokens": 258048
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-32K",
+          "input_price": {
+            "price": 0.0032,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0128,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "32K-128K",
+          "input_price": {
+            "price": 0.0064,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0256,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "128K-252K",
+          "input_price": {
+            "price": 0.0096,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0384,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus",
+      "model_name": "qwen3-coder-30b-a3b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 262144,
+        "max_input_tokens": 204800
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-32K",
+          "input_price": {
+            "price": 0.003303,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.016513,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "32K-128K",
+          "input_price": {
+            "price": 0.005504,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.027522,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "128K-200K",
+          "input_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.044035,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-12-01",
+      "model_name": "通义千问Plus 2025-12-01",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 995904
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-256K",
+          "input_price": {
+            "price": 0.002936,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "256K-1M",
+          "input_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.026421,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-09-11",
+      "model_name": "通义千问Plus 2025-09-11",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 995904
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-256K",
+          "input_price": {
+            "price": 0.002936,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "256K-1M",
+          "input_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.026421,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-07-28",
+      "model_name": "通义千问Plus 2025-07-28",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-256K",
+          "input_price": {
+            "price": 0.002936,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "256K-1M",
+          "input_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.026421,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-07-14",
+      "model_name": "通义千问Plus 2025-07-14",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-256K",
+          "input_price": {
+            "price": 0.002936,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "256K-1M",
+          "input_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.026421,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-04-28",
+      "model_name": "通义千问Plus 2025-04-28",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": 129024
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-256K",
+          "input_price": {
+            "price": 0.002936,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "256K-1M",
+          "input_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.026421,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus-2025-01-25",
+      "model_name": "通义千问Plus 2025-01-25",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 129024,
+        "max_input_tokens": 129024
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-256K",
+          "input_price": {
+            "price": 0.002936,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "256K-1M",
+          "input_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.026421,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-flash",
+      "model_name": "通义千问Flash",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 995904,
+        "max_thinking_tokens": 81920,
+        "max_output_tokens": 32768
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-128K",
+          "input_price": {
+            "price": 0.00015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "128K-256K",
+          "input_price": {
+            "price": 0.0006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "256K-1M",
+          "input_price": {
+            "price": 0.0012,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.012,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-flash-2025-07-28",
+      "model_name": "通义千问Flash 2025-07-28",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 995904,
+        "max_thinking_tokens": 81920,
+        "max_output_tokens": 32768
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-128K",
+          "input_price": {
+            "price": 0.00015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "128K-256K",
+          "input_price": {
+            "price": 0.0006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "256K-1M",
+          "input_price": {
+            "price": 0.0012,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.012,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-480b-a35b-instruct",
+      "model_name": "qwen3-coder-480b-a35b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 262144,
+        "max_input_tokens": 204800
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-32K",
+          "input_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.024,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "32K-128K",
+          "input_price": {
+            "price": 0.009,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.036,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "128K-200K",
+          "input_price": {
+            "price": 0.015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.06,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-30b-a3b-instruct",
+      "model_name": "qwen3-coder-30b-a3b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "specs": {
+        "max_context_length": 262144,
+        "max_input_tokens": 204800
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "token_range": "0-32K",
+          "input_price": {
+            "price": 0.0015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "32K-128K",
+          "input_price": {
+            "price": 0.00225,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.009,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        },
+        {
+          "region": "cn-beijing",
+          "token_range": "128K-200K",
+          "input_price": {
+            "price": 0.00375,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.015,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "has_tiered_pricing": true,
+      "status": "active"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 5422,
+    "output_tokens": 4466,
+    "total_tokens": 9888
+  }
+}

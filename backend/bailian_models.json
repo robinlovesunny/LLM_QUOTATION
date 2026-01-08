@@ -1,0 +1,1034 @@
+{
+  "metadata": {
+    "source": "https://help.aliyun.com/zh/model-studio/getting-started/models",
+    "crawl_time": "2026-01-07T16:34:14.719773",
+    "version": "2.0.0"
+  },
+  "models": [
+    {
+      "model_id": "qwen3-max-2025-09-23",
+      "model_name": "qwen3-max-2025-09-23",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "snapshot",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.024,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-max-preview",
+      "model_name": "qwen3-max-preview",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "preview",
+      "specs": {
+        "max_context_length": 81920,
+        "max_input_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-max",
+      "model_name": "qwen3-max-preview",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.024,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-max",
+      "model_name": "qwen-max-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.02,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.06,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-plus",
+      "model_name": "qwen-plus-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 995904,
+        "max_input_tokens": 81920
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.008,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0008,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-flash",
+      "model_name": "qwen-flash",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 995904,
+        "max_thinking_tokens": 100,
+        "max_output_tokens": 32768
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-turbo",
+      "model_name": "qwen-turbo",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 98304,
+        "max_output_tokens": 16384
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.0003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-long",
+      "model_name": "qwen-long",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 10000000,
+        "max_input_tokens": 10000000,
+        "max_output_tokens": 32768
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.0005,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.002,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-omni-flash",
+      "model_name": "qwen3-omni-flash-2025-12-01",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "snapshot",
+      "specs": {
+        "max_context_length": 65536,
+        "max_input_tokens": 16384,
+        "max_thinking_tokens": 32768,
+        "max_output_tokens": 16384
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-omni-turbo",
+      "model_name": "qwen-omni-turbo-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-plus",
+      "model_name": "qvq-max",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 106496,
+        "max_thinking_tokens": 16384
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.008,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.032,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-max",
+      "model_name": "qvq-max-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.008807,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.035228,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-vl-plus",
+      "model_name": "qwen3-vl-plus-2025-12-19",
+      "vendor": "aliyun",
+      "category": "vision",
+      "version_type": "snapshot",
+      "specs": {
+        "max_context_length": 258048,
+        "max_input_tokens": 81920
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-max",
+      "model_name": "qwen-vl-max-latest",
+      "vendor": "aliyun",
+      "category": "vision",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.004,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-vl-plus",
+      "model_name": "qwen-vl-plus-latest",
+      "vendor": "aliyun",
+      "category": "vision",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.002,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-audio-turbo",
+      "model_name": "qwen-audio-turbo-latest",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 8192,
+        "max_input_tokens": 6144,
+        "max_output_tokens": 2048
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-coder-plus",
+      "model_name": "qwen3-coder-plus-2025-09-23",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "snapshot",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-coder-plus",
+      "model_name": "qwen-coder-plus-latest与qwen-coder-plus的最新快照版能力相同",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen-coder-turbo",
+      "model_name": "qwen-coder-turbo-latest与qwen-coder-turbo的最新快照版能力相同",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-14b-instruct-1m",
+      "model_name": "qwen2.5-14b-instruct-1m",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 1000000,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 8192
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.001,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-7b-instruct-1m",
+      "model_name": "qwen2.5-7b-instruct-1m",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.001,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-72b-instruct",
+      "model_name": "qwen2.5-72b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 129024
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.012,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.004,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-32b-instruct",
+      "model_name": "qwen2.5-32b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.006,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-14b-instruct",
+      "model_name": "qwen2.5-14b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-7b-instruct",
+      "model_name": "qwen2.5-7b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.001,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-3b-instruct",
+      "model_name": "qwen2.5-3b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 30720
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.0009,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.0003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-1.5b-instruct",
+      "model_name": "qwen2.5-1.5b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2.5-0.5b-instruct",
+      "model_name": "qwen2.5-0.5b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-72b-instruct",
+      "model_name": "qwen2-72b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 6144
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.004,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.012,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen2-7b-instruct",
+      "model_name": "qwen2-7b-instruct",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 128000
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.002,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.001,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qvq-72b-preview",
+      "model_name": "qvq-72b-preview",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 32768,
+        "max_input_tokens": 16384,
+        "max_output_tokens": 16384
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.012,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.036,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-v3",
+      "model_name": "deepseek-v3.",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 98304,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.002,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model_name": "deepseek-v3.2-exp",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 131072,
+        "max_input_tokens": 98304,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.002,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "deepseek-r1",
+      "model_name": "deepseek-r1-",
+      "vendor": "deepseek",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.016,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "glm-4.7",
+      "model_name": "glm-4.7",
+      "vendor": "zhipu",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_context_length": 202752,
+        "max_input_tokens": 169984,
+        "max_thinking_tokens": 32768
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.003,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          },
+          "output_price": {
+            "price": 0.014,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-tts-flash",
+      "model_name": "qwen3-tts-flash",
+      "vendor": "aliyun",
+      "category": "audio",
+      "version_type": "stable",
+      "specs": {
+        "max_input_tokens": 600
+      },
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "cosyvoice-v3-plus",
+      "model_name": "cosyvoice-v3-plus",
+      "vendor": "aliyun",
+      "category": "audio",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "cosyvoice-v3-flash",
+      "model_name": "cosyvoice-v3-flash",
+      "vendor": "aliyun",
+      "category": "audio",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "cosyvoice-v2",
+      "model_name": "cosyvoice-v2",
+      "vendor": "aliyun",
+      "category": "audio",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "cosyvoice-v1",
+      "model_name": "cosyvoice-v1",
+      "vendor": "aliyun",
+      "category": "audio",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-asr",
+      "model_name": "qwen3-asr-flash-filetrans",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "text-embedding-v3",
+      "model_name": "text-embedding-v3",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.00133,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "text-embedding-v2",
+      "model_name": "text-embedding-v2",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.0007,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "text-embedding-v1",
+      "model_name": "text-embedding-v1",
+      "vendor": "aliyun",
+      "category": "embedding",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    },
+    {
+      "model_id": "qwen3-rerank",
+      "model_name": "qwen3-rerank",
+      "vendor": "aliyun",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": {
+        "max_input_tokens": 30000
+      },
+      "pricing": [
+        {
+          "region": "cn-beijing",
+          "region_name": "中国内地（北京）",
+          "currency": "CNY",
+          "billing_type": "token",
+          "supports_thinking_mode": false,
+          "thinking_mode_same_price": true,
+          "has_context_tiered_pricing": false,
+          "input_price": {
+            "price": 0.0005,
+            "unit": "千Token",
+            "unit_quantity": 1000
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "model_id": "baichuan2-7b-chat-v1",
+      "model_name": "baichuan2-7b-chat-v1",
+      "vendor": "baichuan",
+      "category": "text_generation",
+      "version_type": "stable",
+      "specs": null,
+      "pricing": [],
+      "status": "active"
+    }
+  ]
+}

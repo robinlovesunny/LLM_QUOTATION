@@ -1,0 +1,119 @@
+{
+  "aliyun": {
+    "products": [
+      {
+        "product_code": "bailian",
+        "product_name": "百炼大模型服务",
+        "category": "AI-大模型",
+        "vendor": "aliyun",
+        "description": "百炼大模型服务 - 阿里云AI大模型服务",
+        "status": "active"
+      },
+      {
+        "product_code": "pai-dlc",
+        "product_name": "PAI-DLC深度学习容器",
+        "category": "AI-训练平台",
+        "vendor": "aliyun",
+        "description": "PAI-DLC深度学习容器 - 阿里云AI大模型服务",
+        "status": "active"
+      },
+      {
+        "product_code": "ecs-gpu",
+        "product_name": "ECS GPU计算型实例",
+        "category": "计算-GPU实例",
+        "vendor": "aliyun",
+        "description": "ECS GPU计算型实例 - 阿里云AI大模型服务",
+        "status": "active"
+      }
+    ],
+    "prices": [
+      {
+        "product_code": "bailian",
+        "region": "cn-hangzhou",
+        "spec_type": "qwen-max",
+        "billing_mode": "pay-as-you-go",
+        "unit_price": "0.040",
+        "unit": "1k-input-tokens",
+        "pricing_variables": {
+          "token_based": true,
+          "input_token_price": 0.04,
+          "output_token_price": 0.12,
+          "thinking_mode_multiplier": 2.0,
+          "batch_discount": 0.5
+        }
+      },
+      {
+        "product_code": "bailian",
+        "region": "cn-hangzhou",
+        "spec_type": "qwen-plus",
+        "billing_mode": "pay-as-you-go",
+        "unit_price": "0.008",
+        "unit": "1k-input-tokens",
+        "pricing_variables": {
+          "token_based": true,
+          "input_token_price": 0.008,
+          "output_token_price": 0.024,
+          "thinking_mode_multiplier": 2.0,
+          "batch_discount": 0.5
+        }
+      },
+      {
+        "product_code": "bailian",
+        "region": "cn-hangzhou",
+        "spec_type": "qwen-turbo",
+        "billing_mode": "pay-as-you-go",
+        "unit_price": "0.003",
+        "unit": "1k-input-tokens",
+        "pricing_variables": {
+          "token_based": true,
+          "input_token_price": 0.003,
+          "output_token_price": 0.006,
+          "thinking_mode_multiplier": 1.0,
+          "batch_discount": 0.5
+        }
+      },
+      {
+        "product_code": "pai-dlc",
+        "region": "cn-hangzhou",
+        "spec_type": "ecs.gn7i-c16g1.4xlarge",
+        "billing_mode": "pay-as-you-go",
+        "unit_price": "12.50",
+        "unit": "hour",
+        "pricing_variables": {}
+      },
+      {
+        "product_code": "pai-dlc",
+        "region": "cn-hangzhou",
+        "spec_type": "ecs.gn7i-c32g1.8xlarge",
+        "billing_mode": "pay-as-you-go",
+        "unit_price": "25.00",
+        "unit": "hour",
+        "pricing_variables": {}
+      },
+      {
+        "product_code": "ecs-gpu",
+        "region": "cn-hangzhou",
+        "spec_type": "ecs.gn7i.24xlarge",
+        "billing_mode": "subscription",
+        "unit_price": "18000.00",
+        "unit": "month",
+        "pricing_variables": {}
+      },
+      {
+        "product_code": "ecs-gpu",
+        "region": "cn-beijing",
+        "spec_type": "ecs.gn7i.24xlarge",
+        "billing_mode": "subscription",
+        "unit_price": "18500.00",
+        "unit": "month",
+        "pricing_variables": {}
+      }
+    ],
+    "errors": []
+  },
+  "volcano": {
+    "products": [],
+    "prices": [],
+    "errors": []
+  }
+}
