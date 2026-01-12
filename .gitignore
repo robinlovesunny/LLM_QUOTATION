@@ -8,6 +8,3 @@
 venv/
 .venv/
 env/
-
-# IDE 配置
-.qoder/
