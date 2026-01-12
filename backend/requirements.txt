@@ -27,6 +27,7 @@ aiohttp==3.9.1
 # Excel处理
 openpyxl==3.1.2
 xlsxwriter==3.1.9
+pandas>=2.0.0
 
 # 阿里云SDK
 oss2==2.18.4

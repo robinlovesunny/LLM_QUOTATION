@@ -1,0 +1,177 @@
+2026-01-09 09:32:53.167 | INFO     | app.core.middleware:dispatch:212 | [fa3e079c] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 09:32:53.209 | INFO     | app.core.middleware:dispatch:222 | [fa3e079c] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 42.05ms
+2026-01-09 09:33:06.094 | INFO     | app.core.middleware:dispatch:212 | [c32af5de] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 09:33:06.100 | INFO     | app.core.middleware:dispatch:222 | [c32af5de] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 6.1ms
+2026-01-09 09:33:12.621 | INFO     | app.core.middleware:dispatch:212 | [1973efb9] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 09:33:12.629 | INFO     | app.core.middleware:dispatch:222 | [1973efb9] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 8.11ms
+2026-01-09 09:33:12.646 | INFO     | app.core.middleware:dispatch:212 | [74817908] | 请求开始 | GET /api/v1/quotes/a24b6d10-e21a-494c-a018-6e6a8c222a3f | IP: 127.0.0.1 | Query: 
+2026-01-09 09:33:12.653 | INFO     | app.core.middleware:dispatch:222 | [74817908] | 请求完成 | GET /api/v1/quotes/a24b6d10-e21a-494c-a018-6e6a8c222a3f | Status: 200 | 耗时: 7.22ms
+2026-01-09 09:33:12.691 | INFO     | app.core.middleware:dispatch:212 | [a70d2603] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 09:33:12.696 | INFO     | app.core.middleware:dispatch:222 | [a70d2603] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 4.91ms
+2026-01-09 09:33:20.475 | INFO     | app.core.middleware:dispatch:212 | [4f81ba04] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 09:33:20.480 | INFO     | app.core.middleware:dispatch:222 | [4f81ba04] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 4.54ms
+2026-01-09 16:52:16.446 | INFO     | app.core.middleware:dispatch:212 | [f1bb47c3] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 16:52:16.456 | INFO     | app.core.middleware:dispatch:222 | [f1bb47c3] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 10.94ms
+2026-01-09 16:54:26.699 | INFO     | app.core.middleware:dispatch:212 | [ce6658ba] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 16:54:26.704 | INFO     | app.core.middleware:dispatch:222 | [ce6658ba] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 4.62ms
+2026-01-09 16:56:47.311 | INFO     | app.core.middleware:dispatch:212 | [7425937e] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 16:56:47.316 | INFO     | app.core.middleware:dispatch:222 | [7425937e] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 5.02ms
+2026-01-09 16:56:58.524 | INFO     | app.core.middleware:dispatch:212 | [b471f621] | 请求开始 | POST /api/v1/ai/chat | IP: 127.0.0.1 | Query: 
+2026-01-09 16:56:58.528 | INFO     | app.api.v1.endpoints.ai_chat:chat:54 | [b471f621] | [AI Chat] Received message: session=ui_fd5af04c8d89, message=I need a speech recognition model for call center transcription, about 10k minutes per month...
+2026-01-09 16:56:58.531 | INFO     | app.agents.orchestrator:process_user_message:95 | [b471f621] | [Orchestrator] Processing message [session=ui_fd5af04c8d89]: I need a speech recognition model for call center transcription, about 10k minutes per month...
+2026-01-09 16:56:58.701 | ERROR    | app.agents.bailian_client:chat:59 | [b471f621] | 百炼API调用失败: HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Max retries exceeded with url: /api/v1/services/aigc/text-generation/generation (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2026-01-09 16:56:58.705 | ERROR    | app.agents.orchestrator:process_user_message:122 | [b471f621] | [Orchestrator] Error processing message: HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Max retries exceeded with url: /api/v1/services/aigc/text-generation/generation (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2026-01-09 16:56:58.707 | INFO     | app.api.v1.endpoints.ai_chat:chat:63 | [b471f621] | [AI Chat] Response generated: session=ui_fd5af04c8d89
+2026-01-09 16:56:58.707 | INFO     | app.core.middleware:dispatch:222 | [b471f621] | 请求完成 | POST /api/v1/ai/chat | Status: 200 | 耗时: 183.8ms
+2026-01-09 16:57:53.462 | INFO     | main:lifespan:36 | [-] | 停止爬虫调度器...
+2026-01-09 16:57:53.462 | INFO     | main:lifespan:39 | [-] | 关闭数据库连接...
+2026-01-09 16:57:53.462 | INFO     | main:lifespan:40 | [-] | 报价侠系统 已关闭
+2026-01-09 16:57:54.545 | INFO     | app.core.middleware:setup_error_handling:439 | [-] | 错误处理和日志中间件已初始化
+2026-01-09 16:57:54.574 | INFO     | main:lifespan:22 | [-] | 初始化数据库连接...
+2026-01-09 16:57:54.610 | INFO     | app.core.database:init_db:36 | [-] | 数据库连接初始化成功
+2026-01-09 16:57:54.610 | INFO     | main:lifespan:25 | [-] | 初始化Redis连接...
+2026-01-09 16:57:54.611 | INFO     | app.core.redis_client:init_redis:25 | [-] | Redis连接初始化成功
+2026-01-09 16:57:54.611 | INFO     | main:lifespan:28 | [-] | 启动爬虫调度器...
+2026-01-09 16:57:54.615 | INFO     | main:lifespan:31 | [-] | 报价侠系统 启动完成
+2026-01-09 16:58:06.848 | INFO     | app.core.middleware:dispatch:212 | [9ac9e470] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 16:58:06.865 | INFO     | app.core.middleware:dispatch:222 | [9ac9e470] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 17.12ms
+2026-01-09 16:58:09.535 | INFO     | app.core.middleware:dispatch:212 | [c9be80ed] | 请求开始 | POST /api/v1/ai/chat | IP: 127.0.0.1 | Query: 
+2026-01-09 16:58:09.535 | INFO     | app.api.v1.endpoints.ai_chat:chat:54 | [c9be80ed] | [AI Chat] Received message: session=ui_db497430f75d, message=I need a speech recognition model for call center transcription, about 10k minutes per month...
+2026-01-09 16:58:09.535 | INFO     | app.agents.orchestrator:process_user_message:95 | [c9be80ed] | [Orchestrator] Processing message [session=ui_db497430f75d]: I need a speech recognition model for call center transcription, about 10k minutes per month...
+2026-01-09 16:58:09.688 | WARNING  | app.agents.bailian_client:chat:70 | [c9be80ed] | 百炼API网络错误 (attempt 1/3): HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Max retries exceeded with url: /api/v1/services/aigc/text-generation/generation (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2026-01-09 16:58:10.818 | WARNING  | app.agents.bailian_client:chat:70 | [c9be80ed] | 百炼API网络错误 (attempt 2/3): HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Max retries exceeded with url: /api/v1/services/aigc/text-generation/generation (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2026-01-09 16:58:12.939 | WARNING  | app.agents.bailian_client:chat:70 | [c9be80ed] | 百炼API网络错误 (attempt 3/3): HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Max retries exceeded with url: /api/v1/services/aigc/text-generation/generation (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2026-01-09 16:58:12.939 | ERROR    | app.agents.bailian_client:chat:75 | [c9be80ed] | 百炼API调用失败: HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Max retries exceeded with url: /api/v1/services/aigc/text-generation/generation (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2026-01-09 16:58:12.940 | ERROR    | app.agents.orchestrator:process_user_message:122 | [c9be80ed] | [Orchestrator] Error processing message: HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Max retries exceeded with url: /api/v1/services/aigc/text-generation/generation (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2026-01-09 16:58:12.941 | INFO     | app.api.v1.endpoints.ai_chat:chat:63 | [c9be80ed] | [AI Chat] Response generated: session=ui_db497430f75d
+2026-01-09 16:58:12.941 | WARNING  | app.core.middleware:dispatch:266 | [c9be80ed] | 慢请求警告 | POST /api/v1/ai/chat | 耗时: 3406.13ms
+2026-01-09 16:58:12.941 | INFO     | app.core.middleware:dispatch:222 | [c9be80ed] | 请求完成 | POST /api/v1/ai/chat | Status: 200 | 耗时: 3406.9ms
+2026-01-09 16:58:30.654 | INFO     | app.core.middleware:dispatch:212 | [dad2bbf2] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 16:58:30.721 | INFO     | app.core.middleware:dispatch:222 | [dad2bbf2] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 67.39ms
+2026-01-09 16:58:35.403 | INFO     | app.core.middleware:dispatch:212 | [611cc238] | 请求开始 | POST /api/v1/ai/chat | IP: 127.0.0.1 | Query: 
+2026-01-09 16:58:35.404 | INFO     | app.api.v1.endpoints.ai_chat:chat:54 | [611cc238] | [AI Chat] Received message: session=ui_147acc959a63, message=I need a speech recognition model for call center transcription, about 10k minutes per month...
+2026-01-09 16:58:35.404 | INFO     | app.agents.orchestrator:process_user_message:95 | [611cc238] | [Orchestrator] Processing message [session=ui_147acc959a63]: I need a speech recognition model for call center transcription, about 10k minutes per month...
+2026-01-09 16:58:46.094 | INFO     | app.agents.orchestrator:_process_with_ai:165 | [611cc238] | [Orchestrator] Executing function: estimate_llm_usage
+2026-01-09 16:58:46.095 | INFO     | app.agents.tools:execute_function:422 | [611cc238] | [Tools] Executing function: estimate_llm_usage
+2026-01-09 16:58:46.095 | INFO     | app.agents.tools:estimate_llm_usage:311 | [611cc238] | [Tools] estimate_llm_usage: use_case=call center transcription, workload=processing 10k minutes of transcribed audio per month
+2026-01-09 16:58:46.096 | INFO     | app.api.v1.endpoints.ai_chat:chat:63 | [611cc238] | [AI Chat] Response generated: session=ui_147acc959a63
+2026-01-09 16:58:46.097 | WARNING  | app.core.middleware:dispatch:266 | [611cc238] | 慢请求警告 | POST /api/v1/ai/chat | 耗时: 10693.31ms
+2026-01-09 16:58:46.097 | INFO     | app.core.middleware:dispatch:222 | [611cc238] | 请求完成 | POST /api/v1/ai/chat | Status: 200 | 耗时: 10693.91ms
+2026-01-09 17:05:34.932 | INFO     | app.core.middleware:dispatch:212 | [50c6a329] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 17:05:34.979 | INFO     | app.core.middleware:dispatch:222 | [50c6a329] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 48.25ms
+2026-01-09 17:05:50.028 | INFO     | app.core.middleware:dispatch:212 | [29dd3e0c] | 请求开始 | POST /api/v1/quotes/ | IP: 127.0.0.1 | Query: 
+2026-01-09 17:05:50.106 | INFO     | app.core.middleware:dispatch:222 | [29dd3e0c] | 请求完成 | POST /api/v1/quotes/ | Status: 200 | 耗时: 78.36ms
+2026-01-09 17:05:50.155 | INFO     | app.core.middleware:dispatch:212 | [04bc0082] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:05:50.167 | INFO     | app.core.middleware:dispatch:222 | [04bc0082] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 11.43ms
+2026-01-09 17:05:54.929 | INFO     | app.core.middleware:dispatch:212 | [574eef24] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 17:05:54.936 | INFO     | app.core.middleware:dispatch:222 | [574eef24] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 6.3ms
+2026-01-09 17:05:59.746 | INFO     | app.core.middleware:dispatch:212 | [994c8180] | 请求开始 | POST /api/v1/quotes/ | IP: 127.0.0.1 | Query: 
+2026-01-09 17:05:59.781 | INFO     | app.core.middleware:dispatch:222 | [994c8180] | 请求完成 | POST /api/v1/quotes/ | Status: 200 | 耗时: 35.23ms
+2026-01-09 17:05:59.839 | INFO     | app.core.middleware:dispatch:212 | [39e86033] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:05:59.845 | INFO     | app.core.middleware:dispatch:222 | [39e86033] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 5.47ms
+2026-01-09 17:06:18.045 | INFO     | app.core.middleware:dispatch:212 | [5fb18e64] | 请求开始 | PUT /api/v1/quotes/3fb6812f-4bfa-4ec6-b50c-55de862109f6 | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:18.091 | INFO     | app.core.middleware:dispatch:222 | [5fb18e64] | 请求完成 | PUT /api/v1/quotes/3fb6812f-4bfa-4ec6-b50c-55de862109f6 | Status: 200 | 耗时: 45.99ms
+2026-01-09 17:06:18.133 | INFO     | app.core.middleware:dispatch:212 | [10b2dbe8] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:18.139 | INFO     | app.core.middleware:dispatch:222 | [10b2dbe8] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 6.39ms
+2026-01-09 17:06:24.473 | INFO     | app.core.middleware:dispatch:212 | [e04ab80d] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:24.480 | INFO     | app.core.middleware:dispatch:222 | [e04ab80d] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 7.19ms
+2026-01-09 17:06:26.995 | INFO     | app.core.middleware:dispatch:212 | [907a2e13] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:27.011 | INFO     | app.core.middleware:dispatch:222 | [907a2e13] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 16.16ms
+2026-01-09 17:06:27.969 | INFO     | app.core.middleware:dispatch:212 | [716862fa] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:27.974 | INFO     | app.core.middleware:dispatch:222 | [716862fa] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 5.63ms
+2026-01-09 17:06:29.239 | INFO     | app.core.middleware:dispatch:212 | [ef9caebf] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:29.247 | INFO     | app.core.middleware:dispatch:222 | [ef9caebf] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 7.9ms
+2026-01-09 17:06:30.986 | INFO     | app.core.middleware:dispatch:212 | [ea485639] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:30.996 | INFO     | app.core.middleware:dispatch:222 | [ea485639] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 10.14ms
+2026-01-09 17:06:33.456 | INFO     | app.core.middleware:dispatch:212 | [f2dd0e56] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:33.465 | INFO     | app.core.middleware:dispatch:222 | [f2dd0e56] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 8.99ms
+2026-01-09 17:06:33.552 | INFO     | app.core.middleware:dispatch:212 | [40d86449] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:33.556 | INFO     | app.core.middleware:dispatch:222 | [40d86449] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 4.23ms
+2026-01-09 17:06:33.570 | INFO     | app.core.middleware:dispatch:212 | [36989dd8] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50&region=cn-beijing&modality=text&capability=understanding&model_type=llm&keyword=qwen-max
+2026-01-09 17:06:33.579 | INFO     | app.core.middleware:dispatch:222 | [36989dd8] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 9.68ms
+2026-01-09 17:06:35.216 | INFO     | app.core.middleware:dispatch:212 | [b16e2969] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:35.223 | INFO     | app.core.middleware:dispatch:222 | [b16e2969] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 6.64ms
+2026-01-09 17:06:35.236 | INFO     | app.core.middleware:dispatch:212 | [70c11485] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50&region=cn-beijing&modality=text&capability=understanding&model_type=llm&keyword=qwen-max
+2026-01-09 17:06:35.243 | INFO     | app.core.middleware:dispatch:222 | [70c11485] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 6.95ms
+2026-01-09 17:06:37.063 | INFO     | app.core.middleware:dispatch:212 | [8200d74c] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:37.070 | INFO     | app.core.middleware:dispatch:222 | [8200d74c] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 6.61ms
+2026-01-09 17:06:37.083 | INFO     | app.core.middleware:dispatch:212 | [4cf0ce84] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50&region=cn-beijing&modality=text&capability=understanding&model_type=llm&keyword=qwen-max
+2026-01-09 17:06:37.091 | INFO     | app.core.middleware:dispatch:222 | [4cf0ce84] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 8.5ms
+2026-01-09 17:06:38.495 | INFO     | app.core.middleware:dispatch:212 | [c83cd082] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:38.501 | INFO     | app.core.middleware:dispatch:222 | [c83cd082] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 5.5ms
+2026-01-09 17:06:38.517 | INFO     | app.core.middleware:dispatch:212 | [c0bf11c9] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50&region=cn-beijing&modality=text&capability=understanding&keyword=qwen-max
+2026-01-09 17:06:38.537 | INFO     | app.core.middleware:dispatch:222 | [c0bf11c9] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 19.7ms
+2026-01-09 17:06:38.885 | INFO     | app.core.middleware:dispatch:212 | [8e7413a9] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:38.890 | INFO     | app.core.middleware:dispatch:222 | [8e7413a9] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 4.64ms
+2026-01-09 17:06:38.904 | INFO     | app.core.middleware:dispatch:212 | [2dd2228d] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50&region=cn-beijing&modality=text&capability=understanding&keyword=qwen-max
+2026-01-09 17:06:38.913 | INFO     | app.core.middleware:dispatch:222 | [2dd2228d] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 9.32ms
+2026-01-09 17:06:40.853 | INFO     | app.core.middleware:dispatch:212 | [c2b4bc77] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:40.862 | INFO     | app.core.middleware:dispatch:222 | [c2b4bc77] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 8.68ms
+2026-01-09 17:06:40.883 | INFO     | app.core.middleware:dispatch:212 | [43338832] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50&modality=text&capability=understanding&keyword=qwen-max
+2026-01-09 17:06:40.892 | INFO     | app.core.middleware:dispatch:222 | [43338832] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 8.68ms
+2026-01-09 17:06:41.905 | INFO     | app.core.middleware:dispatch:212 | [25aa8cbb] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:41.917 | INFO     | app.core.middleware:dispatch:222 | [25aa8cbb] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 11.63ms
+2026-01-09 17:06:41.931 | INFO     | app.core.middleware:dispatch:212 | [da084be9] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50&capability=understanding&keyword=qwen-max
+2026-01-09 17:06:41.943 | INFO     | app.core.middleware:dispatch:222 | [da084be9] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 11.18ms
+2026-01-09 17:06:42.624 | INFO     | app.core.middleware:dispatch:212 | [8ff90a10] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:42.631 | INFO     | app.core.middleware:dispatch:222 | [8ff90a10] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 7.59ms
+2026-01-09 17:06:42.648 | INFO     | app.core.middleware:dispatch:212 | [15fb88b2] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50&keyword=qwen-max
+2026-01-09 17:06:42.665 | INFO     | app.core.middleware:dispatch:222 | [15fb88b2] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 16.72ms
+2026-01-09 17:06:48.445 | INFO     | app.core.middleware:dispatch:212 | [2a2148ab] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:48.458 | INFO     | app.core.middleware:dispatch:222 | [2a2148ab] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 13.66ms
+2026-01-09 17:06:48.478 | INFO     | app.core.middleware:dispatch:212 | [141ad809] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50&keyword=qwen-max
+2026-01-09 17:06:48.488 | INFO     | app.core.middleware:dispatch:222 | [141ad809] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 10.73ms
+2026-01-09 17:06:58.027 | INFO     | app.core.middleware:dispatch:212 | [0a58ea09] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:58.034 | INFO     | app.core.middleware:dispatch:222 | [0a58ea09] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 6.99ms
+2026-01-09 17:06:58.057 | INFO     | app.core.middleware:dispatch:212 | [625ed03b] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50
+2026-01-09 17:06:58.075 | INFO     | app.core.middleware:dispatch:222 | [625ed03b] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 18.07ms
+2026-01-09 17:06:58.131 | INFO     | app.core.middleware:dispatch:212 | [767defe9] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:06:58.136 | INFO     | app.core.middleware:dispatch:222 | [767defe9] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 5.05ms
+2026-01-09 17:06:58.147 | INFO     | app.core.middleware:dispatch:212 | [56bc19af] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50
+2026-01-09 17:06:58.159 | INFO     | app.core.middleware:dispatch:222 | [56bc19af] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 12.52ms
+2026-01-09 17:07:11.024 | INFO     | app.core.middleware:dispatch:212 | [531fffc6] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:07:11.031 | INFO     | app.core.middleware:dispatch:222 | [531fffc6] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 6.99ms
+2026-01-09 17:07:11.044 | INFO     | app.core.middleware:dispatch:212 | [e6459a40] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50
+2026-01-09 17:07:11.058 | INFO     | app.core.middleware:dispatch:222 | [e6459a40] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 13.88ms
+2026-01-09 17:07:11.623 | INFO     | app.core.middleware:dispatch:212 | [1daf7cc7] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:07:11.630 | INFO     | app.core.middleware:dispatch:222 | [1daf7cc7] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 6.89ms
+2026-01-09 17:07:11.645 | INFO     | app.core.middleware:dispatch:212 | [31108a8e] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50
+2026-01-09 17:07:11.658 | INFO     | app.core.middleware:dispatch:222 | [31108a8e] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 13.7ms
+2026-01-09 17:07:12.585 | INFO     | app.core.middleware:dispatch:212 | [cbfb2886] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:07:12.591 | INFO     | app.core.middleware:dispatch:222 | [cbfb2886] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 5.8ms
+2026-01-09 17:07:12.602 | INFO     | app.core.middleware:dispatch:212 | [e9d02551] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50
+2026-01-09 17:07:12.614 | INFO     | app.core.middleware:dispatch:222 | [e9d02551] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 12.09ms
+2026-01-09 17:07:13.579 | INFO     | app.core.middleware:dispatch:212 | [99495018] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:07:13.584 | INFO     | app.core.middleware:dispatch:222 | [99495018] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 5.32ms
+2026-01-09 17:07:13.599 | INFO     | app.core.middleware:dispatch:212 | [509869e1] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50
+2026-01-09 17:07:13.613 | INFO     | app.core.middleware:dispatch:222 | [509869e1] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 14.09ms
+2026-01-09 17:07:14.978 | INFO     | app.core.middleware:dispatch:212 | [eadd9b24] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:07:14.983 | INFO     | app.core.middleware:dispatch:222 | [eadd9b24] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 5.08ms
+2026-01-09 17:07:14.995 | INFO     | app.core.middleware:dispatch:212 | [52bd15a6] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50
+2026-01-09 17:07:15.006 | INFO     | app.core.middleware:dispatch:222 | [52bd15a6] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 11.26ms
+2026-01-09 17:07:15.104 | INFO     | app.core.middleware:dispatch:212 | [7dc96363] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:07:15.108 | INFO     | app.core.middleware:dispatch:222 | [7dc96363] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 3.81ms
+2026-01-09 17:07:15.118 | INFO     | app.core.middleware:dispatch:212 | [b24b3bbb] | 请求开始 | GET /api/v1/products/models | IP: 127.0.0.1 | Query: page=1&page_size=50
+2026-01-09 17:07:15.128 | INFO     | app.core.middleware:dispatch:222 | [b24b3bbb] | 请求完成 | GET /api/v1/products/models | Status: 200 | 耗时: 10.7ms
+2026-01-09 17:17:27.566 | INFO     | app.core.middleware:dispatch:212 | [d0f4abaa] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 17:17:27.606 | INFO     | app.core.middleware:dispatch:222 | [d0f4abaa] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 40.42ms
+2026-01-09 17:17:50.148 | INFO     | app.core.middleware:dispatch:212 | [70d7484a] | 请求开始 | POST /api/v1/ai/chat | IP: 127.0.0.1 | Query: 
+2026-01-09 17:17:50.150 | INFO     | app.api.v1.endpoints.ai_chat:chat:54 | [70d7484a] | [AI Chat] Received message: session=ui_749a1ea53975, message=I need a speech recognition model for call center transcription, about 10k minutes per month...
+2026-01-09 17:17:50.151 | INFO     | app.agents.orchestrator:process_user_message:95 | [70d7484a] | [Orchestrator] Processing message [session=ui_749a1ea53975]: I need a speech recognition model for call center transcription, about 10k minutes per month...
+2026-01-09 17:17:54.234 | ERROR    | app.agents.bailian_client:chat:75 | [70d7484a] | 百炼API调用失败: 'tool_calls'
+2026-01-09 17:17:54.236 | ERROR    | app.agents.orchestrator:process_user_message:122 | [70d7484a] | [Orchestrator] Error processing message: 'tool_calls'
+2026-01-09 17:17:54.237 | INFO     | app.api.v1.endpoints.ai_chat:chat:63 | [70d7484a] | [AI Chat] Response generated: session=ui_749a1ea53975
+2026-01-09 17:17:54.238 | WARNING  | app.core.middleware:dispatch:266 | [70d7484a] | 慢请求警告 | POST /api/v1/ai/chat | 耗时: 4089.13ms
+2026-01-09 17:17:54.238 | INFO     | app.core.middleware:dispatch:222 | [70d7484a] | 请求完成 | POST /api/v1/ai/chat | Status: 200 | 耗时: 4090.37ms
+2026-01-09 17:17:58.182 | INFO     | app.core.middleware:dispatch:212 | [935a2552] | 请求开始 | GET /api/v1/quotes/ | IP: 127.0.0.1 | Query: page_size=20
+2026-01-09 17:17:58.189 | INFO     | app.core.middleware:dispatch:222 | [935a2552] | 请求完成 | GET /api/v1/quotes/ | Status: 200 | 耗时: 6.87ms
+2026-01-09 17:18:44.851 | INFO     | app.core.middleware:dispatch:212 | [855b1eba] | 请求开始 | POST /api/v1/ai/extract | IP: 127.0.0.1 | Query: 
+2026-01-09 17:18:44.854 | INFO     | app.api.v1.endpoints.ai_chat:extract_from_file:173 | [855b1eba] | [AI Chat] Extracting from file: 模型清单.xlsx, type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+2026-01-09 17:18:44.855 | INFO     | app.services.multimodal_extractor:extract_from_file:83 | [855b1eba] | [Extractor] Processing file: 模型清单.xlsx, type: .xlsx
+2026-01-09 17:18:44.855 | INFO     | app.services.multimodal_extractor:_extract_from_excel:245 | [855b1eba] | [Extractor] Extracting from Excel file
+2026-01-09 17:19:25.868 | WARNING  | app.core.middleware:dispatch:266 | [855b1eba] | 慢请求警告 | POST /api/v1/ai/extract | 耗时: 41016.15ms
+2026-01-09 17:19:25.869 | INFO     | app.core.middleware:dispatch:222 | [855b1eba] | 请求完成 | POST /api/v1/ai/extract | Status: 200 | 耗时: 41018.36ms
+2026-01-09 17:19:53.588 | INFO     | app.core.middleware:dispatch:212 | [b17ac12a] | 请求开始 | POST /api/v1/quotes/ | IP: 127.0.0.1 | Query: 
+2026-01-09 17:19:53.619 | INFO     | app.core.middleware:dispatch:222 | [b17ac12a] | 请求完成 | POST /api/v1/quotes/ | Status: 200 | 耗时: 31.11ms
+2026-01-09 17:19:53.671 | INFO     | app.core.middleware:dispatch:212 | [c978157b] | 请求开始 | GET /api/v1/products/filters | IP: 127.0.0.1 | Query: 
+2026-01-09 17:19:53.677 | INFO     | app.core.middleware:dispatch:222 | [c978157b] | 请求完成 | GET /api/v1/products/filters | Status: 200 | 耗时: 6.26ms

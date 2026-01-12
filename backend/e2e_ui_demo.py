@@ -1,135 +1,144 @@
 """
-智价引擎 E2E 可视化测试界面
-模拟真实用户操作流程的最小化 UI
+SmartPrice Engine E2E Visual Test Interface
+Minimized UI simulating real user operations
 
-核心流程：
-1. 新建报价单 → 筛选商品 → 勾选模型 → 配置参数 → 设置折扣 → 保存生成
-2. 修改报价单 → 增/删/改商品 → 调整折扣 → 保存更新
+Core Flow:
+1. Create Quote -> Filter Products -> Select Models -> Configure Params -> Apply Discount -> Save
+2. Edit Quote -> Add/Remove/Modify Items -> Adjust Discount -> Save Updates
+3. AI Assistant -> Natural Language Quotation -> Auto Extract & Calculate
 
-启动方式：
+Run:
     cd backend
     streamlit run e2e_ui_demo.py --server.port 8502
 """
 import streamlit as st
 import httpx
+import uuid
 from typing import Dict, List, Any, Optional
 from datetime import datetime
 
 
-# ==================== API 请求封装 ====================
+# ==================== API Request Wrapper ====================
 API_BASE_URL = "http://localhost:8000/api/v1"
 
 
 def api(method: str, path: str, params: Dict = None, json_data: Dict = None) -> Dict:
-    """发送 API 请求"""
+    """Send API request"""
     url = f"{API_BASE_URL}{path}"
     try:
         with httpx.Client(timeout=30, proxy=None, trust_env=False) as client:
             resp = client.request(method=method, url=url, params=params, json=json_data)
             if resp.status_code >= 400:
-                st.error(f"API 错误: {resp.status_code} - {resp.text[:200]}")
+                st.error(f"API Error: {resp.status_code} - {resp.text[:200]}")
                 return None
             return resp.json()
     except Exception as e:
-        st.error(f"连接错误: {e}")
+        st.error(f"Connection Error: {e}")
         return None
 
 
-# ==================== 状态初始化 ====================
+# ==================== State Initialization ====================
 def init_state():
-    """初始化 session state"""
+    """Initialize session state"""
     defaults = {
-        "page": "list",           # 当前页面: list / workspace
-        "current_quote": None,    # 当前编辑的报价单
-        "selected_models": [],    # 已勾选的模型
-        "pending_items": [],      # 待添加的配置项
-        "filters": {},            # 筛选条件缓存
+        "page": "list",           # Current page: list / workspace / ai_assistant
+        "current_quote": None,    # Current editing quote
+        "selected_models": [],    # Selected models
+        "pending_items": [],      # Pending config items
+        "filters": {},            # Filter cache
+        "ai_session_id": None,    # AI chat session ID
+        "ai_messages": [],        # AI chat history
+        "extraction_results": [], # Multimodal extraction results
     }
     for key, val in defaults.items():
         if key not in st.session_state:
             st.session_state[key] = val
+    
+    # Generate AI session ID if not exists
+    if not st.session_state.ai_session_id:
+        st.session_state.ai_session_id = f"ui_{uuid.uuid4().hex[:12]}"
 
 
-# ==================== 页面：报价单列表 ====================
+# ==================== Page: Quote List ====================
 def page_quote_list():
-    """报价单列表页"""
-    st.header("📋 我的报价单")
+    """Quote list page"""
+    st.header("📋 My Quotes")
     
     col1, col2 = st.columns([4, 1])
     with col1:
-        st.caption("管理您的所有报价单，点击进入编辑")
+        st.caption("Manage all your quotes, click to edit")
     with col2:
-        if st.button("➕ 新建报价单", type="primary", use_container_width=True):
+        if st.button("➕ New Quote", type="primary", use_container_width=True):
             create_new_quote()
     
-    # 筛选条件
-    with st.expander("🔍 筛选", expanded=False):
+    # Filter section
+    with st.expander("🔍 Filters", expanded=False):
         col1, col2, col3 = st.columns(3)
         with col1:
-            status_filter = st.selectbox("状态", ["全部", "draft", "confirmed", "expired"])
+            status_filter = st.selectbox("Status", ["All", "draft", "confirmed", "expired"])
         with col2:
-            customer_filter = st.text_input("客户名称")
+            customer_filter = st.text_input("Customer Name")
         with col3:
             st.write("")
-            if st.button("搜索"):
+            if st.button("Search"):
                 st.session_state.search_triggered = True
     
-    # 加载报价单列表
+    # Load quote list
     params = {"page_size": 20}
-    if status_filter != "全部":
+    if status_filter != "All":
         params["status"] = status_filter
     if customer_filter:
         params["customer_name"] = customer_filter
     
     result = api("GET", "/quotes/", params=params)
     if not result:
-        st.info("暂无报价单，点击「新建报价单」开始")
+        st.info("No quotes yet. Click 'New Quote' to start.")
         return
     
     quotes = result.get("data", [])
     if not quotes:
-        st.info("暂无报价单，点击「新建报价单」开始")
+        st.info("No quotes yet. Click 'New Quote' to start.")
         return
     
-    # 报价单列表
+    # Quote list
     for quote in quotes:
         render_quote_card(quote)
 
 
 def render_quote_card(quote: Dict):
-    """渲染报价单卡片"""
+    """Render quote card"""
     with st.container(border=True):
         col1, col2, col3, col4, col5 = st.columns([2, 2, 1.5, 1.5, 1.5])
         
         with col1:
             st.markdown(f"**{quote.get('quote_no', 'N/A')}**")
-            st.caption(quote.get('customer_name', '未填写客户'))
+            st.caption(quote.get('customer_name', 'No customer'))
         
         with col2:
-            st.caption(quote.get('project_name', '未填写项目'))
+            st.caption(quote.get('project_name', 'No project'))
             created = quote.get('created_at', '')[:10]
-            st.caption(f"创建: {created}")
+            st.caption(f"Created: {created}")
         
         with col3:
             status = quote.get('status', 'unknown')
-            status_map = {"draft": "🟡 草稿", "confirmed": "🟢 已确认", "expired": "🔴 已过期"}
+            status_map = {"draft": "🟡 Draft", "confirmed": "🟢 Confirmed", "expired": "🔴 Expired"}
             st.write(status_map.get(status, f"⚪ {status}"))
         
         with col4:
             total = float(quote.get('total_amount', 0))
-            st.metric("总金额", f"¥{total:,.2f}", label_visibility="collapsed")
+            st.metric("Total", f"¥{total:,.2f}", label_visibility="collapsed")
         
         with col5:
             quote_id = quote.get('quote_id')
-            if st.button("编辑", key=f"edit_{quote_id}", use_container_width=True):
+            if st.button("Edit", key=f"edit_{quote_id}", use_container_width=True):
                 enter_workspace(quote_id)
 
 
 def create_new_quote():
-    """创建新报价单并进入工作台"""
+    """Create new quote and enter workspace"""
     result = api("POST", "/quotes/", json_data={
-        "customer_name": "待填写",
-        "project_name": "待填写",
+        "customer_name": "To be filled",
+        "project_name": "To be filled",
         "created_by": "e2e_demo",
         "valid_days": 30
     })
@@ -138,12 +147,12 @@ def create_new_quote():
         st.session_state.selected_models = []
         st.session_state.pending_items = []
         st.session_state.page = "workspace"
-        st.success(f"报价单 {result.get('quote_no')} 创建成功！")
+        st.success(f"Quote {result.get('quote_no')} created!")
         st.rerun()
 
 
 def enter_workspace(quote_id: str):
-    """进入报价工作台"""
+    """Enter quote workspace"""
     result = api("GET", f"/quotes/{quote_id}")
     if result:
         st.session_state.current_quote = result
@@ -501,7 +510,7 @@ def render_pending_items(quote: Dict):
                 )
             
             # 预估价格
-            pricing = item.get("pricing", {})
+            pricing = item.get("pricing") or {}
             input_p = float(pricing.get("input_price", 0) or 0)
             output_p = float(pricing.get("output_price", 0) or 0)
             est_price = (input_p * item["input_tokens"] + output_p * item["output_tokens"]) / 1000 * item["duration_months"]
@@ -730,44 +739,478 @@ def render_preview(quote: Dict):
                         st.write(f"v{v.get('version_number')} - {v.get('change_type')} - {v.get('changes_summary')}")
 
 
-# ==================== 主应用 ====================
+# ==================== Page: AI Assistant ====================
+def page_ai_assistant():
+    """AI Assistant page with chat and file upload support"""
+    st.header("🤖 AI Quotation Assistant")
+    st.caption("Chat with AI or upload files (images, PDF, Word, Excel, TXT) to extract quotation information")
+    
+    # Chat container - display message history
+    chat_container = st.container()
+    
+    with chat_container:
+        for idx, msg in enumerate(st.session_state.ai_messages):
+            role = msg.get("role", "user")
+            content = msg.get("content", "")
+            
+            if role == "user":
+                with st.chat_message("user"):
+                    st.write(content)
+                    # Show attached file if any
+                    if msg.get("attachment"):
+                        st.caption(f"📎 Attachment: {msg['attachment']}")
+            else:
+                with st.chat_message("assistant"):
+                    st.write(content)
+                    
+                    # Show extracted data if available
+                    extracted = msg.get("extracted_data")
+                    if extracted:
+                        with st.expander("📊 Extracted Information", expanded=True):
+                            # Show products if found
+                            products = extracted.get("products", [])
+                            if products:
+                                st.markdown("**Products Found:**")
+                                for prod in products[:5]:
+                                    name = prod.get("name", "Unknown")
+                                    qty = prod.get("quantity", "")
+                                    price = prod.get("unit_price", "")
+                                    st.write(f"  - {name}" + (f" x{qty}" if qty else "") + (f" @ ¥{price}" if price else ""))
+                            
+                            # Show customer
+                            customer = extracted.get("customer", {})
+                            if customer and customer.get("name"):
+                                st.write(f"**Customer:** {customer['name']}")
+                            
+                            # Show total
+                            total = extracted.get("total_amount")
+                            if total:
+                                st.metric("Total Amount", f"¥{total:,.2f}")
+                            
+                            # Full data
+                            with st.expander("View Raw Data", expanded=False):
+                                st.json(extracted)
+                        
+                        # Add to quote button
+                        if extracted.get("products"):
+                            if st.button("➕ Add to Quote", key=f"add_{idx}", type="primary"):
+                                add_extraction_to_quote({"extracted_data": extracted, "filename": msg.get("attachment", "chat")})
+                                st.rerun()
+    
+    # Input area
+    st.divider()
+    
+    # File upload section
+    col1, col2 = st.columns([3, 1])
+    
+    with col1:
+        uploaded_file = st.file_uploader(
+            "📎 Attach file (optional)",
+            type=["png", "jpg", "jpeg", "gif", "webp", "bmp", 
+                  "pdf", "doc", "docx", "txt", 
+                  "xls", "xlsx", "csv"],
+            key="chat_file_upload",
+            label_visibility="collapsed"
+        )
+    
+    with col2:
+        if uploaded_file:
+            st.caption(f"📄 {uploaded_file.name[:20]}..." if len(uploaded_file.name) > 20 else f"📄 {uploaded_file.name}")
+    
+    # Show supported types hint
+    with st.expander("ℹ️ Supported File Types", expanded=False):
+        st.markdown("""
+        - **Images**: PNG, JPG, JPEG, GIF, WEBP, BMP
+        - **Documents**: PDF, DOC, DOCX, TXT
+        - **Spreadsheets**: XLS, XLSX, CSV
+        """)
+    
+    # Example questions (only show when chat is empty)
+    if len(st.session_state.ai_messages) == 0:
+        st.markdown("**Try these examples:**")
+        example_cols = st.columns(2)
+        examples = [
+            "I need a speech recognition model for call center transcription, about 10k minutes per month",
+            "Looking for a vision model to analyze product images, around 50k images monthly",
+            "Need a text generation model for customer service chatbot, expect 1M tokens daily",
+            "Want multimodal model that can understand both images and text for document processing"
+        ]
+        for i, example in enumerate(examples):
+            with example_cols[i % 2]:
+                if st.button(example, key=f"example_{i}", use_container_width=True):
+                    process_chat_with_attachment(example, None)
+                    st.rerun()
+    
+    # Chat input
+    user_input = st.chat_input("Type a message or upload a file to extract information...")
+    
+    # Handle text input
+    if user_input:
+        process_chat_with_attachment(user_input, None)
+        st.rerun()
+    
+    # Handle file upload with explicit button
+    if uploaded_file:
+        # Track processed files to avoid duplicates
+        file_key = f"{uploaded_file.name}_{uploaded_file.size}"
+        if "processed_files" not in st.session_state:
+            st.session_state.processed_files = set()
+        
+        if file_key not in st.session_state.processed_files:
+            if st.button("🔍 Extract from File", type="primary", use_container_width=True):
+                st.session_state.processed_files.add(file_key)
+                process_chat_with_attachment(
+                    f"Please extract information from: {uploaded_file.name}",
+                    uploaded_file
+                )
+                st.rerun()
+    
+    # Sidebar
+    with st.sidebar:
+        st.divider()
+        st.subheader("💬 Chat Controls")
+        
+        if st.button("🗑️ Clear Chat", use_container_width=True):
+            st.session_state.ai_messages = []
+            st.rerun()
+        
+        st.caption(f"Messages: {len(st.session_state.ai_messages)}")
+
+
+def process_chat_with_attachment(message: str, uploaded_file=None):
+    """Process chat message with optional file attachment"""
+    import requests
+    
+    # Add user message to history
+    user_msg = {
+        "role": "user",
+        "content": message,
+        "attachment": uploaded_file.name if uploaded_file else None
+    }
+    st.session_state.ai_messages.append(user_msg)
+    
+    # If file is attached, extract information from it
+    if uploaded_file:
+        try:
+            files = {"file": (uploaded_file.name, uploaded_file.getvalue(), uploaded_file.type)}
+            response = requests.post(
+                f"{API_BASE_URL}/ai/extract",
+                files=files,
+                timeout=60
+            )
+            
+            if response.status_code == 200:
+                result = response.json()
+                if result.get("success"):
+                    extracted = result.get("extracted_data", {})
+                    
+                    # Generate response text
+                    response_text = generate_extraction_summary(extracted, uploaded_file.name)
+                    
+                    st.session_state.ai_messages.append({
+                        "role": "assistant",
+                        "content": response_text,
+                        "extracted_data": extracted,
+                        "attachment": uploaded_file.name
+                    })
+                else:
+                    st.session_state.ai_messages.append({
+                        "role": "assistant",
+                        "content": f"Failed to extract from {uploaded_file.name}: {result.get('error', 'Unknown error')}"
+                    })
+            else:
+                st.session_state.ai_messages.append({
+                    "role": "assistant",
+                    "content": f"API error: {response.status_code}"
+                })
+        except Exception as e:
+            st.session_state.ai_messages.append({
+                "role": "assistant",
+                "content": f"Error processing file: {str(e)}"
+            })
+    else:
+        # Text-only message - use original chat API
+        result = api("POST", "/ai/chat", json_data={
+            "message": message,
+            "session_id": st.session_state.ai_session_id
+        })
+        
+        if result:
+            # Convert usage_estimation to products format for Add to Quote
+            usage_est = result.get("usage_estimation")
+            extracted_data = None
+            if usage_est and usage_est.get("recommended_model"):
+                extracted_data = {
+                    "products": [{
+                        "name": usage_est.get("recommended_model", "unknown"),
+                        "quantity": 1,
+                        "unit_price": None,
+                        "tokens_per_call": usage_est.get("estimated_tokens_per_call"),
+                        "call_frequency": usage_est.get("call_frequency"),
+                        "use_case": usage_est.get("use_case")
+                    }],
+                    "usage_estimation": usage_est
+                }
+            
+            st.session_state.ai_messages.append({
+                "role": "assistant",
+                "content": result.get("response", "Sorry, I couldn't process your request."),
+                "entities": result.get("entities"),
+                "usage_estimation": usage_est,
+                "extracted_data": extracted_data
+            })
+        else:
+            st.session_state.ai_messages.append({
+                "role": "assistant",
+                "content": "Connection error. Please check if the backend service is running."
+            })
+
+
+def generate_extraction_summary(extracted: Dict, filename: str) -> str:
+    """Generate a summary response from extracted data"""
+    parts = [f"I've extracted the following information from **{filename}**:\n"]
+    
+    products = extracted.get("products", [])
+    if products:
+        parts.append(f"**Found {len(products)} product(s):**")
+        for prod in products[:5]:
+            name = prod.get("name", "Unknown")
+            qty = prod.get("quantity")
+            price = prod.get("unit_price")
+            line = f"- {name}"
+            if qty:
+                line += f" (Qty: {qty})"
+            if price:
+                line += f" @ ¥{price}"
+            parts.append(line)
+    
+    customer = extracted.get("customer", {})
+    if customer and customer.get("name"):
+        parts.append(f"\n**Customer:** {customer['name']}")
+    
+    total = extracted.get("total_amount")
+    if total:
+        parts.append(f"\n**Total Amount:** ¥{total:,.2f}")
+    
+    if not products and not customer.get("name") and not total:
+        parts.append("No structured data could be extracted. Please check the file content.")
+    else:
+        parts.append("\nClick **'Add to Quote'** to add these items to your quotation.")
+    
+    return "\n".join(parts)
+
+
+def add_extraction_to_quote(extraction_result: Dict):
+    """Add extraction result to quote"""
+    extracted = extraction_result.get("extracted_data", {})
+    products = extracted.get("products", [])
+    
+    if not products:
+        st.warning("No products found to add")
+        return
+    
+    # Create quote if needed
+    if not st.session_state.current_quote:
+        # Safely get customer name
+        customer = extracted.get("customer") or {}
+        customer_name = customer.get("name") if isinstance(customer, dict) else None
+        if not customer_name or not isinstance(customer_name, str):
+            customer_name = "From AI Extraction"
+        
+        result = api("POST", "/quotes/", json_data={
+            "customer_name": customer_name,
+            "project_name": f"Extracted from {extraction_result.get('filename', 'file')}",
+            "created_by": "ai_extractor",
+            "valid_days": 30
+        })
+        if result:
+            st.session_state.current_quote = result
+            st.success(f"New quote created: {result.get('quote_no')}")
+        else:
+            st.error("Failed to create quote")
+            return
+    
+    # Add products to pending items
+    added_count = 0
+    usage_est = extracted.get("usage_estimation", {})
+    
+    for prod in products:
+        # Calculate tokens based on usage estimation if available
+        tokens_per_call = prod.get("tokens_per_call") or usage_est.get("estimated_tokens_per_call", 1000)
+        call_frequency = prod.get("call_frequency") or usage_est.get("call_frequency", 10000)
+        
+        # Estimate monthly tokens (assume 60% input, 40% output)
+        monthly_tokens = tokens_per_call * call_frequency
+        input_tokens = int(monthly_tokens * 0.6)
+        output_tokens = int(monthly_tokens * 0.4)
+        
+        item = {
+            "model_id": prod.get("name", "unknown").lower().replace(" ", "-"),
+            "model_name": prod.get("name", "Unknown Product"),
+            "vendor": "AI Recommended" if usage_est else "Extracted",
+            "pricing": {},
+            "region": "cn-beijing",
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "inference_mode": None,
+            "quantity": prod.get("quantity", 1),
+            "duration_months": 1,
+            "extracted_price": prod.get("unit_price"),
+            "use_case": prod.get("use_case") or usage_est.get("use_case")
+        }
+        
+        if not any(p["model_id"] == item["model_id"] for p in st.session_state.pending_items):
+            st.session_state.pending_items.append(item)
+            added_count += 1
+    
+    if added_count > 0:
+        st.session_state.page = "workspace"
+        st.toast(f"✅ Added {added_count} product(s) - Redirecting to Workspace...", icon="🎉")
+    else:
+        st.warning("Products already in pending items")
+
+
+def send_ai_message(message: str):
+    """Send message to AI and get response"""
+    # Add user message to history
+    st.session_state.ai_messages.append({
+        "role": "user",
+        "content": message
+    })
+    
+    # Call AI API
+    result = api("POST", "/ai/chat", json_data={
+        "message": message,
+        "session_id": st.session_state.ai_session_id
+    })
+    
+    if result:
+        # Add assistant response to history
+        st.session_state.ai_messages.append({
+            "role": "assistant",
+            "content": result.get("response", "Sorry, I couldn't process your request."),
+            "entities": result.get("entities"),
+            "usage_estimation": result.get("usage_estimation"),
+            "price_calculation": result.get("price_calculation")
+        })
+    else:
+        st.session_state.ai_messages.append({
+            "role": "assistant",
+            "content": "Connection error. Please check if the backend service is running."
+        })
+
+
+def clear_ai_chat():
+    """Clear AI chat history"""
+    # Call API to clear session
+    api("POST", "/ai/clear-session", json_data={
+        "session_id": st.session_state.ai_session_id
+    })
+    
+    # Clear local state
+    st.session_state.ai_messages = []
+    st.session_state.ai_session_id = f"ui_{uuid.uuid4().hex[:12]}"
+
+
+def add_ai_result_to_quote(entities: Dict, price_calc: Dict):
+    """
+    Add AI extracted result to pending items or create new quote
+    """
+    product_name = entities.get("product_name", "")
+    product_type = entities.get("product_type", "llm")
+    
+    # Build pending item from AI result
+    item = {
+        "model_id": product_name.lower().replace(" ", "-"),
+        "model_name": product_name,
+        "vendor": "Aliyun",
+        "pricing": {
+            "input_price": 0.02,
+            "output_price": 0.06
+        },
+        "region": entities.get("region", "cn-beijing"),
+        "input_tokens": 100000,
+        "output_tokens": 50000,
+        "inference_mode": None,
+        "quantity": entities.get("quantity", 1),
+        "duration_months": entities.get("duration_months", 1),
+        "ai_estimated_price": price_calc.get("final_price", 0)
+    }
+    
+    # Check if we have a current quote
+    if not st.session_state.current_quote:
+        # Create new quote first
+        result = api("POST", "/quotes/", json_data={
+            "customer_name": "AI Generated",
+            "project_name": entities.get("use_case", "AI Quotation"),
+            "created_by": "ai_assistant",
+            "valid_days": 30
+        })
+        if result:
+            st.session_state.current_quote = result
+            st.success(f"New quote created: {result.get('quote_no')}")
+        else:
+            st.error("Failed to create quote")
+            return
+    
+    # Add to pending items
+    if not any(p["model_id"] == item["model_id"] for p in st.session_state.pending_items):
+        st.session_state.pending_items.append(item)
+        st.success(f"Added {product_name} to pending items. Go to Workspace to configure and save.")
+    else:
+        st.warning(f"{product_name} already in pending items")
+    
+    # Switch to workspace page
+    st.session_state.page = "workspace"
+
+
+# ==================== Main Application ====================
 def main():
     st.set_page_config(
-        page_title="智价引擎 - E2E测试",
+        page_title="SmartPrice Engine - E2E Test",
         page_icon="💰",
         layout="wide"
     )
     
     init_state()
     
-    # 侧边栏 - 系统信息
+    # Sidebar - Navigation & Info
     with st.sidebar:
-        st.title("💰 智价引擎")
-        st.caption("SmartPrice Engine E2E Test")
+        st.title("💰 SmartPrice Engine")
+        st.caption("E2E Visual Test Interface")
         st.divider()
         
-        # 快捷操作
-        if st.button("🏠 返回首页", use_container_width=True):
+        # Navigation
+        st.subheader("📍 Navigation")
+        
+        if st.button("🏠 Quote List", use_container_width=True):
             st.session_state.page = "list"
             st.rerun()
         
-        if st.button("➕ 新建报价单", use_container_width=True):
+        if st.button("➕ New Quote", use_container_width=True):
             create_new_quote()
+        
+        if st.button("🤖 AI Assistant", type="primary", use_container_width=True):
+            st.session_state.page = "ai_assistant"
+            st.rerun()
         
         st.divider()
         
-        # 当前状态
-        st.caption("当前状态")
-        st.write(f"页面: {st.session_state.page}")
+        # Current status
+        st.caption("📊 Status")
+        page_names = {"list": "Quote List", "workspace": "Workspace", "ai_assistant": "AI Assistant"}
+        st.write(f"Page: {page_names.get(st.session_state.page, st.session_state.page)}")
         if st.session_state.current_quote:
-            st.write(f"报价单: {st.session_state.current_quote.get('quote_no', 'N/A')}")
-        st.write(f"待添加: {len(st.session_state.pending_items)} 项")
+            st.write(f"Quote: {st.session_state.current_quote.get('quote_no', 'N/A')}")
+        st.write(f"Pending: {len(st.session_state.pending_items)} items")
     
-    # 主内容区
+    # Main content area
     if st.session_state.page == "list":
         page_quote_list()
     elif st.session_state.page == "workspace":
         page_workspace()
+    elif st.session_state.page == "ai_assistant":
+        page_ai_assistant()
 
 
 if __name__ == "__main__":

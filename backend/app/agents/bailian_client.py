@@ -2,6 +2,7 @@
 百炼API客户端封装
 """
 import dashscope
+import time
 from typing import Dict, Any, List, Optional
 from loguru import logger
 
@@ -9,6 +10,10 @@ from app.core.config import settings
 
 # 配置API Key
 dashscope.api_key = settings.DASHSCOPE_API_KEY
+
+# Retry configuration
+MAX_RETRIES = 3
+RETRY_DELAY = 1  # seconds
 
 
 class BailianClient:
@@ -34,30 +39,44 @@ class BailianClient:
         Returns:
             模型响应
         """
-        try:
-            from dashscope import Generation
-            
-            kwargs = {
-                "model": self.model,
-                "messages": messages,
-                "result_format": "message"
-            }
-            
-            if functions:
-                kwargs["tools"] = [{
-                    "type": "function",
-                    "function": func
-                } for func in functions]
-            
-            if stream:
-                return await self._chat_stream(**kwargs)
-            else:
+        from dashscope import Generation
+        
+        kwargs = {
+            "model": self.model,
+            "messages": messages,
+            "result_format": "message"
+        }
+        
+        if functions:
+            kwargs["tools"] = [{
+                "type": "function",
+                "function": func
+            } for func in functions]
+        
+        if stream:
+            return await self._chat_stream(**kwargs)
+        
+        # Retry logic for non-stream calls
+        last_error = None
+        for attempt in range(MAX_RETRIES):
+            try:
                 response = Generation.call(**kwargs)
                 return self._parse_response(response)
+            except Exception as e:
+                last_error = e
+                error_str = str(e)
+                # Retry on SSL/network errors
+                if "SSL" in error_str or "Connection" in error_str or "timeout" in error_str.lower():
+                    logger.warning(f"百炼API网络错误 (attempt {attempt + 1}/{MAX_RETRIES}): {e}")
+                    if attempt < MAX_RETRIES - 1:
+                        time.sleep(RETRY_DELAY * (attempt + 1))
+                        continue
+                # Don't retry on other errors
+                logger.error(f"百炼API调用失败: {e}")
+                raise
         
-        except Exception as e:
-            logger.error(f"百炼API调用失败: {e}")
-            raise
+        logger.error(f"百炼API调用失败 (已重试{MAX_RETRIES}次): {last_error}")
+        raise last_error
     
     async def _chat_stream(self, **kwargs):
         """流式对话"""
@@ -90,16 +109,33 @@ class BailianClient:
                 message = choice.message
                 
                 # 普通文本响应
-                if hasattr(message, "content"):
+                if hasattr(message, "content") and message.content:
                     result["content"] = message.content
+                elif isinstance(message, dict) and message.get("content"):
+                    result["content"] = message["content"]
                 
-                # Function Call响应
-                if hasattr(message, "tool_calls") and message.tool_calls:
-                    tool_call = message.tool_calls[0]
-                    result["function_call"] = {
-                        "name": tool_call.function.name,
-                        "arguments": tool_call.function.arguments
-                    }
+                # Function Call响应 - handle both object and dict formats
+                tool_calls = None
+                if hasattr(message, "tool_calls"):
+                    tool_calls = message.tool_calls
+                elif isinstance(message, dict) and message.get("tool_calls"):
+                    tool_calls = message["tool_calls"]
+                
+                if tool_calls:
+                    tool_call = tool_calls[0]
+                    # Handle object format
+                    if hasattr(tool_call, "function"):
+                        result["function_call"] = {
+                            "name": tool_call.function.name,
+                            "arguments": tool_call.function.arguments
+                        }
+                    # Handle dict format
+                    elif isinstance(tool_call, dict) and "function" in tool_call:
+                        func = tool_call["function"]
+                        result["function_call"] = {
+                            "name": func.get("name", ""),
+                            "arguments": func.get("arguments", "{}")
+                        }
                 
                 if hasattr(choice, "finish_reason"):
                     result["finish_reason"] = choice.finish_reason

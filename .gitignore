@@ -1,35 +1,13 @@
-# IDE/Editor
-.qoder/
-.vscode/
-.idea/
+# 环境变量文件（包含 API 密钥、密码等敏感信息）
+.env
+.env.local
+.env.*.local
+*.env
 
-# macOS
-.DS_Store
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
+# Python 虚拟环境（可通过 requirements.txt 重建）
 venv/
 .venv/
 env/
 
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Logs
-*.log
-logs/
-
-# Database
-*.db
-*.sqlite3
-
-# Test/Coverage
-.coverage
-htmlcov/
-.pytest_cache/
+# IDE 配置
+.qoder/
