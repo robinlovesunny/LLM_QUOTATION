@@ -21,6 +21,66 @@ from app.services.quote_service import quote_service
 router = APIRouter()
 
 
+@router.get("/statistics")
+async def get_quote_statistics(
+    db: AsyncSession = Depends(get_db)
+):
+    """
+    获取报价统计数据
+    
+    返回总报价数、总金额、本月报价数、本月金额等
+    """
+    from sqlalchemy import select, func, and_
+    from datetime import datetime
+    from app.models.quote import QuoteSheet
+    
+    try:
+        # 总报价数（排除已删除）
+        total_query = select(func.count()).select_from(QuoteSheet).where(
+            QuoteSheet.status != "deleted"
+        )
+        total_result = await db.execute(total_query)
+        total_count = total_result.scalar() or 0
+        
+        # 总金额
+        amount_query = select(func.sum(QuoteSheet.total_amount)).where(
+            QuoteSheet.status != "deleted"
+        )
+        amount_result = await db.execute(amount_query)
+        total_amount = float(amount_result.scalar() or 0)
+        
+        # 本月统计
+        now = datetime.now()
+        month_start = datetime(now.year, now.month, 1)
+        
+        month_count_query = select(func.count()).select_from(QuoteSheet).where(
+            and_(
+                QuoteSheet.status != "deleted",
+                QuoteSheet.created_at >= month_start
+            )
+        )
+        month_count_result = await db.execute(month_count_query)
+        month_count = month_count_result.scalar() or 0
+        
+        month_amount_query = select(func.sum(QuoteSheet.total_amount)).where(
+            and_(
+                QuoteSheet.status != "deleted",
+                QuoteSheet.created_at >= month_start
+            )
+        )
+        month_amount_result = await db.execute(month_amount_query)
+        month_amount = float(month_amount_result.scalar() or 0)
+        
+        return {
+            "total_count": total_count,
+            "total_amount": total_amount,
+            "month_count": month_count,
+            "month_amount": month_amount
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"获取统计数据失败: {str(e)}")
+
+
 @router.post("/", response_model=QuoteDetailResponse)
 async def create_quote(
     request: QuoteCreateRequest = Body(...),

@@ -13,6 +13,42 @@ from app.agents.tools import function_tools
 class AgentOrchestrator:
     """Agent编排器"""
     
+    SYSTEM_PROMPT = """You are "报价侠小助手", an intelligent AI assistant for cloud product quotation.
+
+You help users complete the entire quotation process through conversation:
+1. Understand user needs (use case, scale, budget)
+2. Recommend suitable models (recommend_model)
+3. Calculate costs (calculate_monthly_cost)
+4. Generate quote items (generate_quote_item)
+5. Create quote summary (create_quote_summary)
+
+**CONVERSATION FLOW:**
+1. First, ask about their use case if not clear
+2. Then recommend models based on their needs
+3. Ask about expected usage volume (daily calls)
+4. Calculate and show costs
+5. When user confirms, generate quote item
+6. Ask if they want to add more products or finalize
+
+**IMPORTANT RULES:**
+- Always respond in Chinese
+- Be proactive in guiding the conversation
+- When user says "添加", "加入报价单", "就这个", use generate_quote_item tool
+- When user asks "查看报价单", "总价", use create_quote_summary tool
+- Provide specific numbers and options
+- Keep responses concise but informative
+
+**QUICK OPTIONS (suggest these to user):**
+- When asking use case: "智能客服", "内容创作", "代码助手", "数据分析"
+- When asking volume: "每天100次", "每天1000次", "每天1万次", "每天10万次"
+- After showing cost: "添加到报价单", "换个模型", "调整用量"
+
+**MODEL PRICING:**
+- qwen-max: Best quality. Input: 0.02元/千token, Output: 0.06元/千token
+- qwen-plus: Balanced. Input: 0.008元/千token, Output: 0.024元/千token  
+- qwen-turbo: Economical. Input: 0.0003元/千token, Output: 0.003元/千token
+"""
+    
     def __init__(self):
         self.conversation_history: Dict[str, List[Dict]] = {}
     
@@ -48,7 +84,9 @@ class AgentOrchestrator:
         
         # 初始化会话历史
         if session_id not in self.conversation_history:
-            self.conversation_history[session_id] = []
+            self.conversation_history[session_id] = [
+                {"role": "system", "content": self.SYSTEM_PROMPT}
+            ]
         
         # 添加用户消息到历史
         self.conversation_history[session_id].append({
@@ -127,6 +165,19 @@ class AgentOrchestrator:
             elif function_name == "calculate_price":
                 result["price_calculation"] = function_result
                 result["response"] = self._generate_price_response(function_result)
+            
+            elif function_name in ["search_models", "get_model_price", "calculate_monthly_cost", "recommend_model", "generate_quote_item", "create_quote_summary"]:
+                # 产品查询和报价工具
+                result["response"] = self._generate_tool_response(function_name, function_result)
+                logger.info(f"Function result for {function_name}: success={function_result.get('success')}, has_quote_item={function_result.get('quote_item') is not None}")
+                # 保留原始数据给前端处理
+                if function_name == "generate_quote_item" and function_result.get("success"):
+                    result["quote_item"] = function_result.get("quote_item")
+                    result["action"] = "add_to_quote"
+                    logger.info(f"Added quote_item to result: {result.get('quote_item') is not None}")
+                elif function_name == "create_quote_summary" and function_result.get("success"):
+                    result["quote_summary"] = function_result.get("quote")
+                    result["action"] = "show_quote_summary"
         
         # 普通对话响应
         else:
@@ -173,6 +224,70 @@ class AgentOrchestrator:
         response.append("\n是否需要生成完整的报价单?")
         
         return "\n".join(response)
+    
+    def _generate_tool_response(self, function_name: str, result: Dict[str, Any]) -> str:
+        """生成工具调用结果的响应"""
+        if function_name == "search_models":
+            if not result.get("models"):
+                return "未找到匹配的模型，请尝试其他关键词。"
+            
+            parts = [f"找到 {result['found']} 个模型："]
+            for m in result["models"]:
+                price_info = ""
+                if m.get("input_price"):
+                    price_info = f"，输入: {m['input_price']}元/{m['unit']}"
+                    if m.get("output_price"):
+                        price_info += f"，输出: {m['output_price']}元/{m['unit']}"
+                parts.append(f"- **{m['model_name']}** ({m['category']}){price_info}")
+            return "\n".join(parts)
+        
+        elif function_name == "get_model_price":
+            if not result.get("found"):
+                return result.get("message", "未找到该模型")
+            return result.get("message", "")
+        
+        elif function_name == "calculate_monthly_cost":
+            if "error" in result:
+                return f"计算失败: {result.get('message', result.get('error'))}"
+            return (
+                f"💰 **月费用估算**\n\n"
+                f"模型: {result['model_name']}\n"
+                f"日调用量: {result['daily_calls']:,} 次\n"
+                f"月调用量: {result['monthly_calls']:,} 次\n"
+                f"平均输入: {result['avg_input_tokens']} tokens\n"
+                f"平均输出: {result['avg_output_tokens']} tokens\n\n"
+                f"输入费用: ¥{result['input_cost']:,.2f}\n"
+                f"输出费用: ¥{result['output_cost']:,.2f}\n"
+                f"**总计: ¥{result['total_monthly_cost']:,.2f}/月**"
+            )
+        
+        elif function_name == "recommend_model":
+            if not result.get("recommendations"):
+                return f"暂无针对'{result['use_case']}'场景的推荐模型"
+            
+            parts = [f"🌟 **针对'{result['use_case']}'场景的推荐**\n"]
+            for i, m in enumerate(result["recommendations"], 1):
+                pricing = m.get("pricing", {})
+                parts.append(
+                    f"{i}. **{m['model_name']}**\n"
+                    f"   - 输入价格: {pricing.get('input_price', 'N/A')}元/{pricing.get('unit', '千Token')}\n"
+                    f"   - 输出价格: {pricing.get('output_price', 'N/A')}元/{pricing.get('unit', '千Token')}\n"
+                    f"   - 推荐理由: {m.get('recommendation_reason', '')}"
+                )
+            parts.append("\n需要我帮您计算具体费用吗？")
+            return "\n".join(parts)
+        
+        elif function_name == "generate_quote_item":
+            if not result.get("success"):
+                return f"生成报价项失败: {result.get('error', '未知错误')}"
+            return result.get("message", "") + "\n\n要继续添加其他产品，还是查看报价单？"
+        
+        elif function_name == "create_quote_summary":
+            if not result.get("success"):
+                return result.get("message", "报价单为空")
+            return result.get("message", "") + "\n\n是否确认并导出报价单？"
+        
+        return json.dumps(result, ensure_ascii=False, indent=2)
     
     def clear_session(self, session_id: str):
         """清除会话历史"""

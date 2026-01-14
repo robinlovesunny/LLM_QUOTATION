@@ -1,0 +1,277 @@
+/**
+ * 首页样式
+ * @description 粒子动画背景、渐变效果、光晕装饰等视觉特效
+ */
+
+/* ========== 主容器 ========== */
+.home-container {
+  position: relative;
+  min-height: 100vh; /* 全屏高度 */
+  width: 100vw; /* 全屏宽度 */
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1a1a2e 100%);
+  background-size: 400% 400%;
+  animation: bg-gradient 15s ease infinite;
+}
+
+/* 背景渐变动画 */
+@keyframes bg-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ========== 粒子画布 ========== */
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ========== 装饰性光晕 ========== */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.15) 0%, transparent 70%);
+  top: -10%;
+  right: -5%;
+  animation: float-1 12s ease-in-out infinite;
+}
+
+.glow-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(118, 75, 162, 0.12) 0%, transparent 70%);
+  bottom: -5%;
+  left: -5%;
+  animation: float-2 15s ease-in-out infinite;
+}
+
+.glow-orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.1) 0%, transparent 70%);
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: float-3 10s ease-in-out infinite;
+}
+
+/* 光晕浮动动画 */
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-40px) scale(1.1); opacity: 0.9; }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(30px) scale(1.05); opacity: 0.8; }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.4; }
+  50% { transform: translateX(-50%) scale(1.2); opacity: 0.7; }
+}
+
+/* ========== 内容区域 ========== */
+.home-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* 全屏高度 */
+  padding: 2rem 0;
+}
+
+/* ========== 主标题 - 渐变流动效果 ========== */
+.home-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    90deg,
+    #00f2fe,
+    #4facfe,
+    #667eea,
+    #764ba2,
+    #00f2fe
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 4s ease infinite;
+  text-shadow: 0 0 80px rgba(0, 242, 254, 0.4);
+}
+
+@media (min-width: 768px) {
+  .home-title {
+    font-size: 5.5rem;
+  }
+}
+
+/* 渐变流动动画 */
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ========== 副标题 ========== */
+.home-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  animation: fade-in-up 0.8s ease-out 0.2s both;
+}
+
+@media (min-width: 768px) {
+  .home-subtitle {
+    font-size: 1.875rem;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== 主按钮 ========== */
+.home-button {
+  position: relative;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(135deg, #0071E3 0%, #667eea 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: fade-in-up 0.8s ease-out 0.4s both;
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 113, 227, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.home-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 113, 227, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+.home-button:active {
+  transform: translateY(-1px) scale(1);
+}
+
+/* 主按钮样式 - AI智能报价 */
+.home-button-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background-size: 200% 200%;
+  animation: fade-in-up 0.8s ease-out 0.4s both, gradient-shift 4s ease infinite;
+  box-shadow: 
+    0 10px 30px -10px rgba(118, 75, 162, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.home-button-primary:hover {
+  box-shadow: 
+    0 20px 40px -15px rgba(118, 75, 162, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* 次级按钮样式 - 传统流程 */
+.home-button-secondary {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+.home-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.2);
+}
+
+/* 按钮光晕效果 */
+.button-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: button-shine 3s ease-in-out infinite;
+}
+
+@keyframes button-shine {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* ========== 底部信息 ========== */
+.home-footer {
+  margin-top: 4rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  animation: fade-in-up 0.8s ease-out 0.6s both;
+}
+
+/* ========== 响应式调整 ========== */
+@media (max-width: 640px) {
+  .home-title {
+    font-size: 2.5rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-button {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+
+  .glow-orb-1,
+  .glow-orb-2 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .glow-orb-3 {
+    width: 200px;
+    height: 200px;
+  }
+}
