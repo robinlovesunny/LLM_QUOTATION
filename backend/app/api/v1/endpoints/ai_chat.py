@@ -1,43 +1,57 @@
 """
-AI交互API端点
-支持智能对话、实体提取、价格计算等功能
+AI Chat API Endpoints
+Provides intelligent quotation dialogue interface with multimodal support
 """
 import uuid
-from typing import Optional
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect
-from pydantic import BaseModel
+from typing import Optional, Dict, Any, List
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect, HTTPException, UploadFile, File
+from pydantic import BaseModel, Field
 from loguru import logger
 
 from app.agents.orchestrator import agent_orchestrator
-from app.agents.tools import function_tools
+from app.services.multimodal_extractor import multimodal_extractor
 
 router = APIRouter()
 
 
-class ChatMessage(BaseModel):
-    """对话消息"""
-    message: str
-    session_id: Optional[str] = None
+# ========== Request/Response Schemas ==========
+class ChatRequest(BaseModel):
+    """Chat request model"""
+    message: str = Field(..., description="User message", min_length=1, max_length=2000)
+    session_id: Optional[str] = Field(None, description="Session ID for conversation continuity")
 
 
-class ExtractRequest(BaseModel):
-    """提取请求"""
-    text: str
-    extract_type: str = "entities"  # entities, usage, price
+class ChatResponse(BaseModel):
+    """Chat response model"""
+    response: str = Field(..., description="AI response text")
+    session_id: str = Field(..., description="Session ID")
+    entities: Optional[Dict[str, Any]] = Field(None, description="Extracted entities")
+    usage_estimation: Optional[Dict[str, Any]] = Field(None, description="Usage estimation")
+    price_calculation: Optional[Dict[str, Any]] = Field(None, description="Price calculation result")
+    error: Optional[str] = Field(None, description="Error message if any")
 
 
-@router.post("/chat")
-async def chat(request: ChatMessage):
+class ClearSessionRequest(BaseModel):
+    """Clear session request"""
+    session_id: str = Field(..., description="Session ID to clear")
+
+
+# ========== API Endpoints ==========
+@router.post("/chat", response_model=ChatResponse)
+async def chat(request: ChatRequest):
     """
-    智能对话接口
+    Intelligent quotation dialogue interface
     
-    支持:
-    - 需求理解和实体提取
-    - 用量预估
-    - 价格计算
-    - 多轮对话上下文
+    Process user requirements through AI and return:
+    - Natural language response
+    - Extracted entities (product, quantity, duration, etc.)
+    - Usage estimation for LLM products
+    - Price calculation results
     """
-    session_id = request.session_id or str(uuid.uuid4())
+    # Generate session_id if not provided
+    session_id = request.session_id or f"session_{uuid.uuid4().hex[:12]}"
+    
+    logger.info(f"[AI Chat] Received message: session={session_id}, message={request.message[:100]}...")
     
     try:
         result = await agent_orchestrator.process_user_message(
@@ -45,143 +59,183 @@ async def chat(request: ChatMessage):
             session_id=session_id
         )
         
-        return {
-            "success": True,
-            "session_id": session_id,
-            "response": result.get("response", ""),
-            "entities": result.get("entities"),
-            "usage_estimation": result.get("usage_estimation"),
-            "price_calculation": result.get("price_calculation"),
-            "quote_item": result.get("quote_item"),
-            "quote_summary": result.get("quote_summary"),
-            "action": result.get("action")
-        }
+        logger.info(f"[AI Chat] Response generated: session={session_id}")
+        
+        return ChatResponse(
+            response=result.get("response", ""),
+            session_id=session_id,
+            entities=result.get("entities"),
+            usage_estimation=result.get("usage_estimation"),
+            price_calculation=result.get("price_calculation"),
+            error=result.get("error")
+        )
+        
     except Exception as e:
-        logger.error(f"AI对话失败: {e}")
-        return {
-            "success": False,
-            "session_id": session_id,
-            "error": str(e)
-        }
+        logger.error(f"[AI Chat] Error processing message: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to process message: {str(e)}"
+        )
 
 
-@router.post("/extract")
-async def extract_entities(request: ExtractRequest):
+@router.post("/clear-session")
+async def clear_session(request: ClearSessionRequest):
     """
-    实体提取接口
+    Clear conversation history for a session
+    """
+    logger.info(f"[AI Chat] Clearing session: {request.session_id}")
     
-    从文本中提取产品需求信息:
-    - 产品类型
-    - 数量
-    - 时长
-    - 使用场景
-    """
-    try:
-        entities = await function_tools.extract_entities(request.text)
-        return {
-            "success": True,
-            "entities": entities
-        }
-    except Exception as e:
-        logger.error(f"实体提取失败: {e}")
-        return {
-            "success": False,
-            "error": str(e)
-        }
-
-
-@router.post("/estimate-usage")
-async def estimate_usage(use_case: str, workload: str):
-    """
-    用量预估接口
+    await agent_orchestrator.clear_session_async(request.session_id)
     
-    根据使用场景预估:
-    - Token消耗量
-    - 调用频率
-    - 思考模式占比
-    - Batch调用占比
-    """
-    try:
-        estimation = await function_tools.estimate_llm_usage(use_case, workload)
-        return {
-            "success": True,
-            "estimation": estimation
-        }
-    except Exception as e:
-        logger.error(f"用量预估失败: {e}")
-        return {
-            "success": False,
-            "error": str(e)
-        }
-
-
-@router.post("/calculate-price")
-async def calculate_price(product_type: str, base_price: float, context: dict):
-    """
-    价格计算接口
-    
-    支持多种计费模式:
-    - LLM Token计费
-    - 思考模式加价
-    - Batch折扣
-    - 标准产品计费
-    """
-    try:
-        result = await function_tools.calculate_price(product_type, base_price, context)
-        return {
-            "success": True,
-            "price": result
-        }
-    except Exception as e:
-        logger.error(f"价格计算失败: {e}")
-        return {
-            "success": False,
-            "error": str(e)
-        }
-
-
-@router.delete("/session/{session_id}")
-async def clear_session(session_id: str):
-    """清除会话历史"""
-    agent_orchestrator.clear_session(session_id)
-    return {"success": True, "message": f"会话 {session_id} 已清除"}
+    return {"message": "Session cleared successfully", "session_id": request.session_id}
 
 
 @router.websocket("/ws")
 async def websocket_chat(websocket: WebSocket):
     """
-    WebSocket流式对话
-    
-    消息格式:
-    发送: {"message": "用户消息", "session_id": "xxx"}
-    接收: {"type": "response", "content": "...", "done": false}
+    WebSocket connection for streaming chat (reserved for future use)
     """
     await websocket.accept()
-    session_id = str(uuid.uuid4())
+    session_id = f"ws_{uuid.uuid4().hex[:12]}"
+    logger.info(f"[AI Chat] WebSocket connected: {session_id}")
     
     try:
         while True:
-            data = await websocket.receive_json()
-            message = data.get("message", "")
-            session_id = data.get("session_id", session_id)
+            data = await websocket.receive_text()
+            logger.info(f"[AI Chat] WebSocket message: {data[:100]}...")
             
-            # 处理消息
+            # Process through orchestrator
             result = await agent_orchestrator.process_user_message(
-                message=message,
+                message=data,
                 session_id=session_id
             )
             
-            # 发送响应
             await websocket.send_json({
-                "type": "response",
+                "response": result.get("response", ""),
                 "session_id": session_id,
-                "content": result.get("response", ""),
                 "entities": result.get("entities"),
-                "done": True
+                "price_calculation": result.get("price_calculation")
             })
             
     except WebSocketDisconnect:
-        logger.info(f"WebSocket断开: {session_id}")
+        logger.info(f"[AI Chat] WebSocket disconnected: {session_id}")
+        agent_orchestrator.clear_session(session_id)
+
+
+@router.post("/parse-requirement")
+async def parse_requirement(requirement_text: str):
+    """
+    Parse requirement text and extract entities (standalone endpoint)
+    """
+    from app.agents.tools import function_tools
+    
+    logger.info(f"[AI Chat] Parsing requirement: {requirement_text[:100]}...")
+    
+    try:
+        entities = await function_tools.extract_entities(requirement_text)
+        return {
+            "entities": entities,
+            "message": "Requirement parsed successfully"
+        }
     except Exception as e:
-        logger.error(f"WebSocket错误: {e}")
-        await websocket.close()
+        logger.error(f"[AI Chat] Parse error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ========== Multimodal Extraction Endpoints ==========
+class ExtractResponse(BaseModel):
+    """File extraction response model"""
+    success: bool
+    filename: str
+    source_type: Optional[str] = None
+    extracted_data: Optional[Dict[str, Any]] = None
+    raw_text: Optional[str] = None
+    error: Optional[str] = None
+
+
+@router.post("/extract", response_model=ExtractResponse)
+async def extract_from_file(file: UploadFile = File(...)):
+    """
+    Extract quotation-related information from uploaded file.
+    
+    Supported file types:
+    - Images: PNG, JPG, JPEG, GIF, WEBP, BMP
+    - Documents: PDF, DOC, DOCX, TXT
+    - Spreadsheets: XLS, XLSX, CSV
+    
+    Returns extracted structured data including:
+    - Products (name, quantity, price)
+    - Customer information
+    - Dates and validity
+    - Total amounts
+    """
+    logger.info(f"[AI Chat] Extracting from file: {file.filename}, type: {file.content_type}")
+    
+    try:
+        # Read file content
+        content = await file.read()
+        
+        # Extract information
+        result = await multimodal_extractor.extract_from_file(
+            file_content=content,
+            filename=file.filename,
+            mime_type=file.content_type
+        )
+        
+        return ExtractResponse(
+            success=result.get("success", False),
+            filename=file.filename,
+            source_type=result.get("source_type"),
+            extracted_data=result.get("extracted_data"),
+            raw_text=result.get("raw_text"),
+            error=result.get("error")
+        )
+        
+    except Exception as e:
+        logger.error(f"[AI Chat] Extraction error: {e}")
+        return ExtractResponse(
+            success=False,
+            filename=file.filename,
+            error=str(e)
+        )
+
+
+@router.post("/extract-multiple")
+async def extract_from_multiple_files(files: List[UploadFile] = File(...)):
+    """
+    Extract information from multiple files at once.
+    
+    Returns a list of extraction results, one per file.
+    """
+    logger.info(f"[AI Chat] Extracting from {len(files)} files")
+    
+    results = []
+    for file in files:
+        try:
+            content = await file.read()
+            result = await multimodal_extractor.extract_from_file(
+                file_content=content,
+                filename=file.filename,
+                mime_type=file.content_type
+            )
+            results.append(result)
+        except Exception as e:
+            results.append({
+                "success": False,
+                "filename": file.filename,
+                "error": str(e)
+            })
+    
+    return {
+        "total": len(files),
+        "successful": sum(1 for r in results if r.get("success")),
+        "results": results
+    }
+
+
+@router.get("/supported-types")
+async def get_supported_file_types():
+    """
+    Get list of supported file types for extraction.
+    """
+    return multimodal_extractor.get_supported_types()
