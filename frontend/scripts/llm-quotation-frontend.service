@@ -1,0 +1,69 @@
+# =============================================================================
+# LLM_QUOTATION 前端服务 - systemd 服务配置
+# 
+# 安装方法:
+#   sudo cp llm-quotation-frontend.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable llm-quotation-frontend
+#   sudo systemctl start llm-quotation-frontend
+#
+# 查看状态:
+#   sudo systemctl status llm-quotation-frontend
+#   sudo journalctl -u llm-quotation-frontend -f
+# =============================================================================
+
+[Unit]
+Description=LLM Quotation Frontend Service
+Documentation=https://github.com/your-repo/LLM_QUOTATION
+After=network.target llm-quotation-backend.service
+Wants=llm-quotation-backend.service
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/LLM_QUOTATION/frontend
+Environment="PATH=/usr/local/bin:/usr/bin:/bin:/root/.nvm/versions/node/v*/bin"
+Environment="NODE_ENV=production"
+
+# 可配置的环境变量
+Environment="FRONTEND_PORT=3000"
+Environment="FRONTEND_HOST=0.0.0.0"
+
+# 启动命令
+ExecStart=/root/LLM_QUOTATION/frontend/scripts/production_start.sh
+
+# 重启策略
+Restart=always
+RestartSec=5
+
+# 停止信号和超时
+KillSignal=SIGTERM
+TimeoutStopSec=30
+KillMode=mixed
+
+# 资源限制
+LimitNOFILE=65536
+LimitNPROC=4096
+
+# 日志配置 (使用 journald)
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=llm-quotation-frontend
+
+# 安全加固
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/root/LLM_QUOTATION/frontend/logs
+ReadWritePaths=/root/LLM_QUOTATION/frontend/dist
+PrivateTmp=true
+
+# 进程和资源监控
+MemoryMax=2G
+CPUQuota=100%
+
+[Install]
+WantedBy=multi-user.target

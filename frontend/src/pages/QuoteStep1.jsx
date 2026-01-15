@@ -128,6 +128,22 @@ function QuoteStep1() {
   };
 
   /**
+   * 清空所有已选模型
+   */
+  const handleClearAll = () => {
+    setSelectedModels([]);
+  };
+
+  /**
+   * 检查当前分类是否已全选
+   */
+  const isCategoryAllSelected = () => {
+    const currentModels = getCurrentModels();
+    if (currentModels.length === 0) return false;
+    return currentModels.every(m => isModelSelected(m.model_code));
+  };
+
+  /**
    * 全选当前分类
    */
   const handleSelectAll = () => {
@@ -138,6 +154,15 @@ function QuoteStep1() {
       model_name: m.model_name,
       display_name: m.model_code  // 使用纯英文标识符
     }))]);
+  };
+
+  /**
+   * 取消当前分类的全部选择
+   */
+  const handleDeselectAll = () => {
+    const currentModels = getCurrentModels();
+    const currentModelCodes = new Set(currentModels.map(m => m.model_code));
+    setSelectedModels(prev => prev.filter(m => !currentModelCodes.has(m.model_code)));
   };
 
   /**
@@ -252,12 +277,27 @@ function QuoteStep1() {
                     categoryTree.find(c => c.category_code === activeCategory)?.category_name || ''}
                 </h3>
                 {!isSearching && getCurrentModels().length > 0 && (
-                  <button
-                    onClick={handleSelectAll}
-                    className="text-sm text-primary hover:text-primary/80"
-                  >
-                    全选此分类
-                  </button>
+                  isCategoryAllSelected() ? (
+                    <button
+                      onClick={handleDeselectAll}
+                      className="text-sm text-red-500 hover:text-red-600 flex items-center gap-1 transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                      取消全选
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleSelectAll}
+                      className="text-sm text-primary hover:text-primary/80 flex items-center gap-1 transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      全选此分类
+                    </button>
+                  )
                 )}
               </div>
 
@@ -311,6 +351,17 @@ function QuoteStep1() {
                     <span className="ml-2 text-sm text-primary">({selectedModels.length}个)</span>
                   )}
                 </h3>
+                {selectedModels.length > 0 && (
+                  <button
+                    onClick={handleClearAll}
+                    className="text-sm text-red-500 hover:text-red-600 flex items-center gap-1 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                    清空全部
+                  </button>
+                )}
               </div>
 
               {selectedModels.length === 0 ? (

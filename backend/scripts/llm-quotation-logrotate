@@ -1,0 +1,70 @@
+# =============================================================================
+# LLM_QUOTATION 日志轮转配置
+#
+# 安装方法:
+#   sudo cp llm-quotation-logrotate /etc/logrotate.d/llm-quotation
+#   
+# 测试配置:
+#   sudo logrotate -d /etc/logrotate.d/llm-quotation
+#
+# 手动执行轮转:
+#   sudo logrotate -f /etc/logrotate.d/llm-quotation
+# =============================================================================
+
+# 应用日志
+/root/LLM_QUOTATION/backend/logs/*.log {
+    daily
+    missingok
+    rotate 30
+    compress
+    delaycompress
+    notifempty
+    create 0644 root root
+    dateext
+    dateformat -%Y%m%d
+    sharedscripts
+    postrotate
+        # 如果使用 systemd，发送 USR1 信号让 Gunicorn 重新打开日志文件
+        if [ -f /root/LLM_QUOTATION/backend/gunicorn.pid ]; then
+            kill -USR1 $(cat /root/LLM_QUOTATION/backend/gunicorn.pid) 2>/dev/null || true
+        fi
+    endscript
+}
+
+# 访问日志单独配置（可能更频繁）
+/root/LLM_QUOTATION/backend/logs/access.log {
+    daily
+    missingok
+    rotate 14
+    compress
+    delaycompress
+    notifempty
+    create 0644 root root
+    dateext
+    dateformat -%Y%m%d
+    sharedscripts
+    postrotate
+        if [ -f /root/LLM_QUOTATION/backend/gunicorn.pid ]; then
+            kill -USR1 $(cat /root/LLM_QUOTATION/backend/gunicorn.pid) 2>/dev/null || true
+        fi
+    endscript
+}
+
+# 错误日志保留更长时间
+/root/LLM_QUOTATION/backend/logs/error.log {
+    daily
+    missingok
+    rotate 60
+    compress
+    delaycompress
+    notifempty
+    create 0644 root root
+    dateext
+    dateformat -%Y%m%d
+    sharedscripts
+    postrotate
+        if [ -f /root/LLM_QUOTATION/backend/gunicorn.pid ]; then
+            kill -USR1 $(cat /root/LLM_QUOTATION/backend/gunicorn.pid) 2>/dev/null || true
+        fi
+    endscript
+}

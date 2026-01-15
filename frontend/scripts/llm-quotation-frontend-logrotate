@@ -1,0 +1,26 @@
+# =============================================================================
+# LLM_QUOTATION 前端日志轮转配置
+#
+# 安装方法:
+#   sudo cp llm-quotation-frontend-logrotate /etc/logrotate.d/llm-quotation-frontend
+#   
+# 测试配置:
+#   sudo logrotate -d /etc/logrotate.d/llm-quotation-frontend
+#
+# 手动执行轮转:
+#   sudo logrotate -f /etc/logrotate.d/llm-quotation-frontend
+# =============================================================================
+
+# 前端日志
+/root/LLM_QUOTATION/frontend/logs/*.log {
+    daily
+    missingok
+    rotate 14
+    compress
+    delaycompress
+    notifempty
+    create 0644 root root
+    dateext
+    dateformat -%Y%m%d
+    sharedscripts
+}

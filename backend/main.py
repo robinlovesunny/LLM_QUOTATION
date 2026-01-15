@@ -82,8 +82,81 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    """健康检查"""
+    """基础健康检查"""
     return {"status": "healthy"}
+
+
+@app.get("/health/detailed")
+async def detailed_health_check():
+    """
+    详细健康检查 - 包含数据库和Redis状态
+    用于监控和自动恢复判断
+    """
+    from app.core.database import engine
+    from app.core.redis_client import redis_client
+    from sqlalchemy import text
+    import time
+    
+    health_status = {
+        "status": "healthy",
+        "timestamp": time.time(),
+        "version": settings.APP_VERSION,
+        "checks": {}
+    }
+    
+    # 检查数据库连接
+    try:
+        async with engine.begin() as conn:
+            await conn.execute(text("SELECT 1"))
+        health_status["checks"]["database"] = {"status": "healthy", "message": "连接正常"}
+    except Exception as e:
+        health_status["checks"]["database"] = {"status": "unhealthy", "message": str(e)}
+        health_status["status"] = "degraded"
+    
+    # 检查Redis连接
+    try:
+        if redis_client:
+            await redis_client.ping()
+            health_status["checks"]["redis"] = {"status": "healthy", "message": "连接正常"}
+        else:
+            health_status["checks"]["redis"] = {"status": "unhealthy", "message": "客户端未初始化"}
+            health_status["status"] = "degraded"
+    except Exception as e:
+        health_status["checks"]["redis"] = {"status": "unhealthy", "message": str(e)}
+        health_status["status"] = "degraded"
+    
+    return health_status
+
+
+@app.get("/health/live")
+async def liveness_check():
+    """存活检查 - 仅检查应用是否响应"""
+    return {"alive": True}
+
+
+@app.get("/health/ready")
+async def readiness_check():
+    """
+    就绪检查 - 检查应用是否准备好接收流量
+    """
+    from app.core.database import engine
+    from app.core.redis_client import redis_client
+    from sqlalchemy import text
+    
+    try:
+        # 检查数据库
+        async with engine.begin() as conn:
+            await conn.execute(text("SELECT 1"))
+        
+        # 检查Redis
+        if redis_client:
+            await redis_client.ping()
+        
+        return {"ready": True}
+    except Exception as e:
+        logger.warning(f"就绪检查失败: {e}")
+        from fastapi import Response
+        return Response(content='{"ready": false}', status_code=503, media_type="application/json")
 
 
 if __name__ == "__main__":

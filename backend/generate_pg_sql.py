@@ -70,6 +70,14 @@ def escape_sql_bool(b: bool) -> str:
 
 
 def parse_price(price_str: str) -> Tuple[Optional[float], Optional[str]]:
+    """解析价格字符串，提取价格值和单位
+    
+    支持格式：
+    - 0.0032元 -> (0.0032, '元')
+    - 0.20元/张 -> (0.20, '张')
+    - 每千Token 0.0032元 -> (0.0032, '千Token')
+    - 免费 -> (0.0, '免费')
+    """
     if not price_str or not isinstance(price_str, str):
         return None, None
     price_str = price_str.strip()
@@ -82,11 +90,25 @@ def parse_price(price_str: str) -> Tuple[Optional[float], Optional[str]]:
         price_value = float(matches[0].replace(',', ''))
     except ValueError:
         return None, None
+    
+    # 智能提取单位
     unit = '元'
     if '/' in price_str:
+        # 格式: 0.20元/张
         unit_match = re.search(r'/([^\s]+)', price_str)
         if unit_match:
             unit = unit_match.group(1)
+    elif '每千Token' in price_str or '千Token' in price_str:
+        unit = '千Token'
+    elif '每张' in price_str:
+        unit = '张'
+    elif '每秒' in price_str:
+        unit = '秒'
+    elif '万字符' in price_str:
+        unit = '万字符'
+    elif '每次' in price_str:
+        unit = '次'
+    
     return price_value, unit
 
 
@@ -118,22 +140,84 @@ def extract_model_info(raw_name: str) -> Tuple[str, bool, bool, str]:
     return model_name, supports_batch, supports_cache, remark
 
 
-def identify_price_type(field_name: str, category_code: str) -> Tuple[str, str]:
-    if '输入' in field_name and 'Token' in field_name:
-        return 'input_token', '千Token'
-    if '输出' in field_name and 'Token' in field_name:
-        if '思维链' in field_name:
-            return 'output_token_thinking', '千Token'
-        return 'output_token', '千Token'
-    if '输出' in field_name and '张' in field_name:
-        return 'image_count', '张'
-    if '输出' in field_name and '秒' in field_name:
-        return 'video_second', '秒'
-    if '输入' in field_name and '万字符' in field_name:
-        return 'character', '万字符'
-    if '输入' in field_name and '秒' in field_name:
-        return 'audio_second', '秒'
+def get_field_with_alternatives(record: dict, primary_key: str, alternatives: List[str] = None) -> Optional[str]:
+    """智能获取字段值，支持备选字段名和模糊匹配"""
+    # 精确匹配
+    if primary_key in record:
+        return record[primary_key]
     
+    # 备选字段名
+    if alternatives:
+        for alt in alternatives:
+            if alt in record:
+                return record[alt]
+    
+    # 模糊匹配
+    for key in record.keys():
+        if primary_key in key or any(alt in key for alt in (alternatives or [])):
+            return record[key]
+    
+    return None
+
+
+def infer_mode_from_category(category_code: str, sub_category: str) -> Optional[str]:
+    """根据分类推断默认模式"""
+    # 文本生成模型通常有模式区分
+    if category_code in ['text_qwen', 'text_qwen_opensource', 'text_thirdparty']:
+        # 默认为非思考模式，除非名称中包含 thinking/qwq/qvq
+        if sub_category and ('QwQ' in sub_category or 'QVQ' in sub_category or '思考' in sub_category):
+            return '思考模式'
+        return '仅非思考模式'
+    return None
+
+
+def identify_price_type(field_name: str, category_code: str, field_value: str = '') -> Tuple[str, str]:
+    """识别价格类型和默认单位
+    
+    优先级：
+    1. 从字段名中提取
+    2. 从字段值中提取
+    3. 根据分类推断
+    """
+    field_name_lower = field_name.lower() if field_name else ''
+    field_value_str = str(field_value) if field_value else ''
+    
+    # 从字段名提取
+    if '输入' in field_name:
+        if 'Token' in field_name or 'token' in field_name_lower:
+            return 'input_token', '千Token'
+        if '音频' in field_name or '语音' in field_name or '秒' in field_name:
+            return 'audio_second', '秒'
+        if '万字符' in field_name or '字符' in field_name:
+            return 'character', '万字符'
+        if '图片' in field_name or '图像' in field_name:
+            return 'input_token_image', '千Token'
+    
+    if '输出' in field_name:
+        if 'Token' in field_name or 'token' in field_name_lower:
+            if '思维链' in field_name:
+                return 'output_token_thinking', '千Token'
+            return 'output_token', '千Token'
+        if '张' in field_name or '张' in field_value_str:
+            return 'image_count', '张'
+        if '秒' in field_name or '秒' in field_value_str:
+            return 'video_second', '秒'
+    
+    # 通用单价字段
+    if '单价' in field_name:
+        # 从值中推断单位
+        if '/张' in field_value_str or '元/张' in field_value_str:
+            return 'image_count', '张'
+        if '/秒' in field_value_str or '元/秒' in field_value_str:
+            if category_code == 'video_gen':
+                return 'video_second', '秒'
+            return 'audio_second', '秒'
+        if '千Token' in field_value_str:
+            return 'output_token', '千Token'
+        if '万字符' in field_value_str:
+            return 'character', '万字符'
+    
+    # 根据分类推断
     if category_code in ['image_gen', 'image_gen_thirdparty']:
         return 'image_count', '张'
     elif category_code == 'video_gen':
@@ -142,6 +226,9 @@ def identify_price_type(field_name: str, category_code: str) -> Tuple[str, str]:
         return 'character', '万字符'
     elif category_code == 'asr':
         return 'audio_second', '秒'
+    elif category_code in ['text_qwen', 'text_qwen_opensource', 'text_thirdparty']:
+        return 'output_token', '千Token'
+    
     return 'output_price', '元'
 
 
@@ -189,10 +276,24 @@ class EnhancedPGSQLGenerator:
             model_code, supports_batch, supports_cache, remark = extract_model_info(raw_model_name)
             display_name = f"{sub_category} - {model_code}" if sub_category.lower() not in model_code.lower() else model_code
             
-            # 提取模式和Token阶梯
-            mode = record.get('模式')  # 如: "仅非思考模式", "非思考和思考模式"
-            token_tier = record.get('单次请求的输入Token数')  # 如: "0<Token≤32K"
-            resolution = record.get('输出视频分辨率')  # 如: "720P", "1080P"
+            # 提取模式（支持多种字段名）
+            mode = get_field_with_alternatives(record, '模式', ['调用模式', '推理模式'])
+            # 如果模式为空，尝试从分类推断
+            if not mode and category_code in ['text_qwen', 'text_qwen_opensource', 'text_thirdparty']:
+                mode = infer_mode_from_category(category_code, sub_category)
+            
+            # 提取Token阶梯（支持多种字段名）
+            token_tier = get_field_with_alternatives(record, '单次请求的输入Token数', [
+                '输入Token范围', 'Token范围', '单次请求Token数', 'Token阶梯'
+            ])
+            # 处理无阶梯计价的情况
+            if token_tier and '无阶梯' in token_tier:
+                token_tier = '无阶梯计价'
+            
+            # 提取视频分辨率（支持多种字段名）
+            resolution = get_field_with_alternatives(record, '输出视频分辨率', [
+                '分辨率', '视频分辨率', '规格'
+            ])
             
             # 创建模型记录
             model_record = ModelRecord(
@@ -220,7 +321,7 @@ class EnhancedPGSQLGenerator:
                 if price_value is None:
                     continue
                 
-                dim_code, default_unit = identify_price_type(field_name, category_code)
+                dim_code, default_unit = identify_price_type(field_name, category_code, field_value)
                 final_unit = unit if unit and unit != '免费' else default_unit
                 
                 model_record.prices.append({

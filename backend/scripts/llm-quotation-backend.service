@@ -1,0 +1,72 @@
+# =============================================================================
+# LLM_QUOTATION 后端服务 - systemd 服务配置
+# 
+# 安装方法:
+#   sudo cp llm-quotation-backend.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable llm-quotation-backend
+#   sudo systemctl start llm-quotation-backend
+#
+# 查看状态:
+#   sudo systemctl status llm-quotation-backend
+#   sudo journalctl -u llm-quotation-backend -f
+# =============================================================================
+
+[Unit]
+Description=LLM Quotation Backend API Service
+Documentation=https://github.com/your-repo/LLM_QUOTATION
+After=network.target postgresql.service redis.service
+Wants=postgresql.service redis.service
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=exec
+User=root
+Group=root
+WorkingDirectory=/root/LLM_QUOTATION/backend
+Environment="PATH=/root/LLM_QUOTATION/backend/venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONPATH=/root/LLM_QUOTATION/backend"
+Environment="PYTHONUNBUFFERED=1"
+
+# 可配置的环境变量
+Environment="GUNICORN_WORKERS=4"
+Environment="BIND_HOST=0.0.0.0"
+Environment="BIND_PORT=8000"
+Environment="GUNICORN_TIMEOUT=120"
+
+# 启动命令
+ExecStart=/root/LLM_QUOTATION/backend/scripts/production_start.sh
+
+# 重启策略
+Restart=always
+RestartSec=5
+
+# 停止信号和超时
+KillSignal=SIGTERM
+TimeoutStopSec=30
+KillMode=mixed
+
+# 资源限制
+LimitNOFILE=65536
+LimitNPROC=4096
+
+# 日志配置 (使用 journald)
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=llm-quotation-backend
+
+# 安全加固
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/root/LLM_QUOTATION/backend/logs
+ReadWritePaths=/root/LLM_QUOTATION/backend/exports
+PrivateTmp=true
+
+# 进程和资源监控
+MemoryMax=4G
+CPUQuota=200%
+
+[Install]
+WantedBy=multi-user.target

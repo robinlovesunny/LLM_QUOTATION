@@ -133,6 +133,16 @@ function QuoteStep2() {
   };
 
   /**
+   * 检查模型的所有变体是否已全选
+   */
+  const isModelAllVariantsSelected = (modelCode) => {
+    const variants = variantsMap[modelCode] || [];
+    const config = modelConfigs[modelCode] || { variantIds: [], variants: [] };
+    if (variants.length === 0) return false;
+    return variants.every(v => config.variantIds.includes(v.id));
+  };
+
+  /**
    * 全选模型的所有变体
    */
   const handleSelectAllVariants = (modelCode) => {
@@ -142,6 +152,19 @@ function QuoteStep2() {
       [modelCode]: {
         variantIds: variants.map(v => v.id),
         variants: variants
+      }
+    }));
+  };
+
+  /**
+   * 取消模型的所有变体选择
+   */
+  const handleDeselectAllVariants = (modelCode) => {
+    setModelConfigs(prev => ({
+      ...prev,
+      [modelCode]: {
+        variantIds: [],
+        variants: []
       }
     }));
   };
@@ -199,6 +222,32 @@ function QuoteStep2() {
   };
 
   /**
+   * 解析 rule_text 提取关键信息
+   */
+  const parseRuleText = (ruleText) => {
+    if (!ruleText) return { mode: null, tokenTier: null, extras: [] };
+    
+    const result = { mode: null, tokenTier: null, extras: [] };
+    const parts = ruleText.split(' | ');
+    
+    for (const part of parts) {
+      if (part.startsWith('模式:')) {
+        result.mode = part.replace('模式:', '');
+      } else if (part.startsWith('Token范围:')) {
+        result.tokenTier = part.replace('Token范围:', '');
+      } else if (part.startsWith('备注:')) {
+        // 备注可能包含多个特性，用 | 分隔
+        const remarks = part.replace('备注:', '').split(' | ');
+        result.extras.push(...remarks);
+      } else if (part.includes('Batch') || part.includes('缓存')) {
+        result.extras.push(part);
+      }
+    }
+    
+    return result;
+  };
+
+  /**
    * 渲染变体卡片
    */
   const renderVariantCard = (variant, isSelected, onClick) => {
@@ -225,31 +274,42 @@ function QuoteStep2() {
         
         {/* 配置标签 */}
         <div className="flex flex-wrap gap-1.5 mb-2">
-          {variant.mode && (
-            <span className="px-2 py-0.5 bg-amber-100 text-amber-700 text-xs rounded">
-              {variant.mode}
-            </span>
-          )}
-          {variant.token_tier && (
-            <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded">
-              {variant.token_tier}
-            </span>
-          )}
-          {variant.resolution && (
-            <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded">
-              {variant.resolution}
-            </span>
-          )}
-          {variant.supports_batch && (
-            <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded">
-              Batch半价
-            </span>
-          )}
-          {variant.supports_cache && (
-            <span className="px-2 py-0.5 bg-orange-100 text-orange-700 text-xs rounded">
-              支持缓存
-            </span>
-          )}
+          {/* 优先显示结构化字段，如果没有则从 rule_text 解析 */}
+          {(() => {
+            const parsed = parseRuleText(variant.rule_text);
+            const mode = variant.mode || parsed.mode;
+            const tokenTier = variant.token_tier || parsed.tokenTier;
+            
+            return (
+              <>
+                {mode && (
+                  <span className="px-2 py-0.5 bg-amber-100 text-amber-700 text-xs rounded">
+                    {mode}
+                  </span>
+                )}
+                {tokenTier && (
+                  <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded">
+                    {tokenTier}
+                  </span>
+                )}
+                {variant.resolution && (
+                  <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded">
+                    {variant.resolution}
+                  </span>
+                )}
+                {variant.supports_batch && (
+                  <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded">
+                    Batch半价
+                  </span>
+                )}
+                {variant.supports_cache && (
+                  <span className="px-2 py-0.5 bg-orange-100 text-orange-700 text-xs rounded">
+                    支持缓存
+                  </span>
+                )}
+              </>
+            );
+          })()}
         </div>
         
         {/* 价格 */}
@@ -325,12 +385,27 @@ function QuoteStep2() {
                         {variants.length} 个配置可选
                       </span>
                       {variants.length > 1 && (
-                        <button
-                          onClick={() => handleSelectAllVariants(model.model_code)}
-                          className="text-xs text-primary hover:text-primary/80"
-                        >
-                          全选
-                        </button>
+                        isModelAllVariantsSelected(model.model_code) ? (
+                          <button
+                            onClick={() => handleDeselectAllVariants(model.model_code)}
+                            className="text-xs text-red-500 hover:text-red-600 flex items-center gap-1 transition-colors"
+                          >
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            取消全选
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => handleSelectAllVariants(model.model_code)}
+                            className="text-xs text-primary hover:text-primary/80 flex items-center gap-1 transition-colors"
+                          >
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            全选
+                          </button>
+                        )
                       )}
                     </div>
                   </div>
