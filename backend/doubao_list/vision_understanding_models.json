@@ -1,0 +1,104 @@
+{
+  "crawl_time": "2026-01-16T09:50:07.862132",
+  "source_url": "https://www.volcengine.com/pricing?product=ark_bd&tab=1",
+  "category": "视觉理解模型",
+  "total_count": 12,
+  "models": [
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-pro（输入）",
+      "context_length": "128k",
+      "service_type": "推理（输入）",
+      "price": "0.003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-pro（输出）",
+      "context_length": "128k",
+      "service_type": "推理（输出）",
+      "price": "0.009",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-pro（批量输入）",
+      "context_length": "128k",
+      "service_type": "批量推理（输入）",
+      "price": "0.0015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-pro（批量输出）",
+      "context_length": "128k",
+      "service_type": "批量推理（输出）",
+      "price": "0.0045",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-lite（输入）",
+      "context_length": "128k",
+      "service_type": "推理（输入）",
+      "price": "0.0015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-lite（输出）",
+      "context_length": "128k",
+      "service_type": "推理（输出）",
+      "price": "0.0045",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-lite（批量输入）",
+      "context_length": "128k",
+      "service_type": "批量推理（输入）",
+      "price": "0.00075",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-lite（批量输出）",
+      "context_length": "128k",
+      "service_type": "批量推理（输出）",
+      "price": "0.00225",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-pro-32k（输入）",
+      "context_length": "32k",
+      "service_type": "推理（输入）",
+      "price": "0.003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-pro-32k（输出）",
+      "context_length": "32k",
+      "service_type": "推理（输出）",
+      "price": "0.009",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-pro-32k（批量输入）",
+      "context_length": "32k",
+      "service_type": "批量推理（输入）",
+      "price": "0.0015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-1.5-vision-pro-32k（批量输出）",
+      "context_length": "32k",
+      "service_type": "批量推理（输出）",
+      "price": "0.0045",
+      "unit": "元/千tokens"
+    }
+  ]
+}

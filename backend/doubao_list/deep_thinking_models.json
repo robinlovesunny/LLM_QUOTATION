@@ -1,0 +1,488 @@
+{
+  "crawl_time": "2026-01-16T09:50:07.862132",
+  "source_url": "https://www.volcengine.com/pricing?product=ark_bd&tab=1",
+  "category": "深度思考模型",
+  "total_count": 60,
+  "models": [
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（特惠区输入）",
+      "context_length": "输入长度 [0, 32]，输出长度 [0, 0.2]",
+      "service_type": "推理（输入）",
+      "price": "0.0008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（特惠区输出）",
+      "context_length": "输入长度 [0, 32]，输出长度 [0, 0.2]",
+      "service_type": "推理（输出）",
+      "price": "0.002",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（32k输入）",
+      "context_length": "输入长度 [0, 32]，输出长度 [0.2, 16]",
+      "service_type": "推理（输入）",
+      "price": "0.0008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（32k输出）",
+      "context_length": "输入长度 [0, 32]，输出长度 [0.2, 16]",
+      "service_type": "推理（输出）",
+      "price": "0.008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（128k输入）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "推理（输入）",
+      "price": "0.0012",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（128k输出）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "推理（输出）",
+      "price": "0.016",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（256k输入）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "推理（输入）",
+      "price": "0.0024",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（256k输出）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "推理（输出）",
+      "price": "0.024",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（特惠区批量输入）",
+      "context_length": "输入长度 [0, 32]，输出长度 [0, 0.2]",
+      "service_type": "批量推理（输入）",
+      "price": "0.0004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（特惠区批量输出）",
+      "context_length": "输入长度 [0, 32]，输出长度 [0, 0.2]",
+      "service_type": "批量推理（输出）",
+      "price": "0.001",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（32k批量输入）",
+      "context_length": "输入长度 [0, 32]，输出长度 [0.2, 16]",
+      "service_type": "批量推理（输入）",
+      "price": "0.0004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（32k批量输出）",
+      "context_length": "输入长度 [0, 32]，输出长度 [0.2, 16]",
+      "service_type": "批量推理（输出）",
+      "price": "0.004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（128k批量输入）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "批量推理（输入）",
+      "price": "0.0006",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（128k批量输出）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "批量推理（输出）",
+      "price": "0.008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（256k批量输入）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "批量推理（输入）",
+      "price": "0.0012",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6（256k批量输出）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "批量推理（输出）",
+      "price": "0.012",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（32k输入）",
+      "context_length": "输入长度 [0, 32]",
+      "service_type": "推理（输入）",
+      "price": "0.0008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（32k输出）",
+      "context_length": "输入长度 [0, 32]",
+      "service_type": "推理（输出）",
+      "price": "0.008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（128k输入）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "推理（输入）",
+      "price": "0.0012",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（128k输出）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "推理（输出）",
+      "price": "0.016",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（256k输入）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "推理（输入）",
+      "price": "0.0024",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（256k输出）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "推理（输出）",
+      "price": "0.024",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（32k批量输入）",
+      "context_length": "输入长度 [0, 32]",
+      "service_type": "批量推理（输入）",
+      "price": "0.0004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（32k批量输出）",
+      "context_length": "输入长度 [0, 32]",
+      "service_type": "批量推理（输出）",
+      "price": "0.004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（128k批量输入）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "批量推理（输入）",
+      "price": "0.0006",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（128k批量输出）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "批量推理（输出）",
+      "price": "0.008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（256k批量输入）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "批量推理（输入）",
+      "price": "0.0012",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-thinking（256k批量输出）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "批量推理（输出）",
+      "price": "0.012",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（32k输入）",
+      "context_length": "输入长度 [0, 32]",
+      "service_type": "推理（输入）",
+      "price": "0.00015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（32k输出）",
+      "context_length": "输入长度 [0, 32]",
+      "service_type": "推理（输出）",
+      "price": "0.0015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（128k输入）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "推理（输入）",
+      "price": "0.0003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（128k输出）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "推理（输出）",
+      "price": "0.003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（256k输入）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "推理（输入）",
+      "price": "0.0006",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（256k输出）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "推理（输出）",
+      "price": "0.006",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（32k批量输入）",
+      "context_length": "输入长度 [0, 32]",
+      "service_type": "批量推理（输入）",
+      "price": "0.000075",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（32k批量输出）",
+      "context_length": "输入长度 [0, 32]",
+      "service_type": "批量推理（输出）",
+      "price": "0.00075",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（128k批量输入）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "批量推理（输入）",
+      "price": "0.00015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（128k批量输出）",
+      "context_length": "输入长度 [32, 128]",
+      "service_type": "批量推理（输出）",
+      "price": "0.0015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（256k批量输入）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "批量推理（输入）",
+      "price": "0.0003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seed-1.6-flash（256k批量输出）",
+      "context_length": "输入长度 (128, 256]",
+      "service_type": "批量推理（输出）",
+      "price": "0.003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-think-vision-pro（输入）",
+      "context_length": "128k",
+      "service_type": "推理（输入）",
+      "price": "0.003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-think-vision-pro（输出）",
+      "context_length": "128k",
+      "service_type": "推理（输出）",
+      "price": "0.009",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-think-vision-pro（批量输入）",
+      "context_length": "128k",
+      "service_type": "批量推理（输入）",
+      "price": "0.0015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-think-vision-pro（批量输出）",
+      "context_length": "128k",
+      "service_type": "批量推理（输出）",
+      "price": "0.0045",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-think-pro（输入）",
+      "context_length": "128k",
+      "service_type": "推理（输入）",
+      "price": "0.004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-think-pro（输出）",
+      "context_length": "128k",
+      "service_type": "推理（输出）",
+      "price": "0.016",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-think-pro（批量输入）",
+      "context_length": "128k",
+      "service_type": "批量推理（输入）",
+      "price": "0.002",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-think-pro（批量输出）",
+      "context_length": "128k",
+      "service_type": "批量推理（输出）",
+      "price": "0.008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1（输入）",
+      "context_length": "64k",
+      "service_type": "推理（输入）",
+      "price": "0.004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1（输出）",
+      "context_length": "64k",
+      "service_type": "推理（输出）",
+      "price": "0.016",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1（批量输入）",
+      "context_length": "64k",
+      "service_type": "批量推理（输入）",
+      "price": "0.002",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1（批量输出）",
+      "context_length": "64k",
+      "service_type": "批量推理（输出）",
+      "price": "0.008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1-D-Qwen32B（输入）",
+      "context_length": "32k",
+      "service_type": "推理（输入）",
+      "price": "0.0015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1-D-Qwen32B（输出）",
+      "context_length": "32k",
+      "service_type": "推理（输出）",
+      "price": "0.006",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1-D-Qwen32B（批量输入）",
+      "context_length": "32k",
+      "service_type": "批量推理（输入）",
+      "price": "0.00075",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1-D-Qwen32B（批量输出）",
+      "context_length": "32k",
+      "service_type": "批量推理（输出）",
+      "price": "0.003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1-D-Qwen7B（输入）",
+      "context_length": "64k",
+      "service_type": "推理（输入）",
+      "price": "0.0006",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1-D-Qwen7B（输出）",
+      "context_length": "64k",
+      "service_type": "推理（输出）",
+      "price": "0.0024",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1-D-Qwen7B（批量输入）",
+      "context_length": "64k",
+      "service_type": "批量推理（输入）",
+      "price": "0.0003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-R1-D-Qwen7B（批量输出）",
+      "context_length": "64k",
+      "service_type": "批量推理（输出）",
+      "price": "0.0012",
+      "unit": "元/千tokens"
+    }
+  ]
+}

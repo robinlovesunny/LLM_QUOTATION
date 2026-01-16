@@ -1,0 +1,50 @@
+{
+  "crawl_time": "2026-01-16T09:50:07.862132",
+  "source_url": "https://www.volcengine.com/pricing?product=ark_bd&tab=1",
+  "category": "视觉大模型",
+  "total_count": 6,
+  "models": [
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seedance-1.0-pro",
+      "price": "0.02",
+      "unit": "元/千tokens",
+      "free_quota": "200万tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seedance-1.0-lite",
+      "price": "0.01",
+      "unit": "元/千tokens",
+      "free_quota": "200万tokens"
+    },
+    {
+      "provider": "阿里云Wan-AI",
+      "model": "Wan2.1-14B",
+      "price": "0.05",
+      "unit": "元/千tokens",
+      "free_quota": "200万tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seedream4.0",
+      "price": "0.2",
+      "unit": "元/张",
+      "free_quota": "张"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-Seedream3.0",
+      "price": "0.26",
+      "unit": "元/张",
+      "free_quota": "张"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao-SeedEdit3.0",
+      "price": "0.3",
+      "unit": "元/张",
+      "free_quota": "张"
+    }
+  ]
+}
