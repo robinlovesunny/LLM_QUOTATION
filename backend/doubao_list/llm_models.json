@@ -1,0 +1,168 @@
+{
+  "crawl_time": "2026-01-16T09:50:07.862132",
+  "source_url": "https://www.volcengine.com/pricing?product=ark_bd&tab=1",
+  "category": "大语言模型",
+  "total_count": 20,
+  "models": [
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-lite-32k(输入)",
+      "context_length": "32k",
+      "service_type": "推理（输入）",
+      "price": "0.0003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-lite-32k(输出)",
+      "context_length": "32k",
+      "service_type": "推理（输出）",
+      "price": "0.0006",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-lite-32k(批量输入)",
+      "context_length": "32k",
+      "service_type": "批量推理（输入）",
+      "price": "0.00015",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-lite-32k(批量输出)",
+      "context_length": "32k",
+      "service_type": "批量推理（输出）",
+      "price": "0.0003",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-pro-256k(输入)",
+      "context_length": "256k",
+      "service_type": "推理（输入）",
+      "price": "0.005",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-pro-256k(输出)",
+      "context_length": "256k",
+      "service_type": "推理（输出）",
+      "price": "0.009",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-pro-256k(批量输入)",
+      "context_length": "256k",
+      "service_type": "批量推理（输入）",
+      "price": "0.005",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-pro-256k(批量输出)",
+      "context_length": "256k",
+      "service_type": "批量推理（输出）",
+      "price": "0.009",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-pro-32k(输入)",
+      "context_length": "32k",
+      "service_type": "推理（输入）",
+      "price": "0.0008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-pro-32k(输出)",
+      "context_length": "32k",
+      "service_type": "推理（输出）",
+      "price": "0.002",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-pro-32k(批量输入)",
+      "context_length": "32k",
+      "service_type": "批量推理（输入）",
+      "price": "0.0004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "Doubao1.5-pro-32k(批量输出)",
+      "context_length": "32k",
+      "service_type": "批量推理（输出）",
+      "price": "0.001",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-V3(输入)",
+      "context_length": "128k",
+      "service_type": "推理（输入）",
+      "price": "0.002",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-V3(输出)",
+      "context_length": "128k",
+      "service_type": "推理（输出）",
+      "price": "0.008",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-V3(批量输入)",
+      "context_length": "128k",
+      "service_type": "批量推理（输入）",
+      "price": "0.001",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "深度求索",
+      "model": "DeepSeek-V3(批量输出)",
+      "context_length": "128k",
+      "service_type": "批量推理（输出）",
+      "price": "0.004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "月之暗面",
+      "model": "Kimi_K2(输入)",
+      "context_length": "256k",
+      "service_type": "推理（输入）",
+      "price": "0.004",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "月之暗面",
+      "model": "Kimi_K2(输出)",
+      "context_length": "256k",
+      "service_type": "推理（输出）",
+      "price": "0.016",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "月之暗面",
+      "model": "Kimi_K2(批量输入)",
+      "context_length": "256k",
+      "service_type": "批量推理（输入）",
+      "price": "0.002",
+      "unit": "元/千tokens"
+    },
+    {
+      "provider": "月之暗面",
+      "model": "Kimi_K2(批量输出)",
+      "context_length": "256k",
+      "service_type": "批量推理（输出）",
+      "price": "0.008",
+      "unit": "元/千tokens"
+    }
+  ]
+}

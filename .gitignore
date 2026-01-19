@@ -42,6 +42,8 @@ Thumbs.db
 *.swp
 *.swo
 *~
+.qoder/
+node_modules/
 
 # Environments
 .env

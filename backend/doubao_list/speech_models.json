@@ -1,0 +1,24 @@
+{
+  "crawl_time": "2026-01-16T09:50:07.862132",
+  "source_url": "https://www.volcengine.com/pricing?product=ark_bd&tab=1",
+  "category": "语音大模型",
+  "total_count": 2,
+  "models": [
+    {
+      "provider": "字节跳动",
+      "model": "语音合成大模型",
+      "service_type": "推理服务",
+      "price": "5",
+      "unit": "元/万字符",
+      "free_quota": "5000 字符"
+    },
+    {
+      "provider": "字节跳动",
+      "model": "声音复刻大模型",
+      "service_type": "推理服务",
+      "price": "8",
+      "unit": "元/万字符",
+      "free_quota": "5000 字符"
+    }
+  ]
+}
