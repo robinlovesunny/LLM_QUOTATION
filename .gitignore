@@ -61,3 +61,6 @@ backend/backend.log
 
 # Frontend specific
 frontend/frontend.log
+
+# 导出文件目录
+backend/exports/*.xlsx
