@@ -62,5 +62,5 @@ backend/backend.log
 # Frontend specific
 frontend/frontend.log
 
-# 导出文件目录
-backend/exports/*.xlsx
+# 本地开发脚本（不提交远端）
+restart.sh
