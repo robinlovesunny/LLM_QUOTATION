@@ -7,6 +7,19 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getPricingCategories, searchPricingModels } from '../api';
 
+// 常用推荐模型列表（小写匹配）
+const FEATURED_MODELS = [
+  'qwen3-max', 'qwen-plus', 'qwen-flash',
+  'qwen3-vl-plus', 'qwen3-vl-flash',
+  'qwen3-asr-flash', 'qwen3-tts-flash',
+  'qwen-image', 'wan2.6-t2v'
+];
+
+// 判断是否为常用推荐模型
+const isFeaturedModel = (modelCode) => {
+  return FEATURED_MODELS.includes(modelCode?.toLowerCase());
+};
+
 function QuoteStep1() {
   const navigate = useNavigate();
   
@@ -85,14 +98,24 @@ function QuoteStep1() {
   };
 
   /**
-   * 获取当前分类的模型列表
+   * 获取当前分类的模型列表（常用模型排序在前）
    */
   const getCurrentModels = () => {
+    let models;
     if (isSearching && searchKeyword) {
-      return searchResults;
+      models = searchResults;
+    } else {
+      const category = categoryTree.find(c => c.category_code === activeCategory);
+      models = category?.models || [];
     }
-    const category = categoryTree.find(c => c.category_code === activeCategory);
-    return category?.models || [];
+    // 排序：常用推荐模型优先
+    return [...models].sort((a, b) => {
+      const aFeatured = isFeaturedModel(a.model_code);
+      const bFeatured = isFeaturedModel(b.model_code);
+      if (aFeatured && !bFeatured) return -1;
+      if (!aFeatured && bFeatured) return 1;
+      return 0;
+    });
   };
 
   /**
@@ -309,16 +332,23 @@ function QuoteStep1() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-h-96 overflow-y-auto">
                 {getCurrentModels().map(model => {
                   const selected = isModelSelected(model.model_code);
+                  const featured = isFeaturedModel(model.model_code);
                   return (
                     <div
                       key={model.model_code}
                       onClick={() => handleToggleModel(model)}
-                      className={`p-3 border-2 rounded-lg cursor-pointer transition-all ${
+                      className={`relative p-3 border-2 rounded-lg cursor-pointer transition-all ${
                         selected
                           ? 'border-primary bg-blue-50'
                           : 'border-border hover:border-primary/50'
                       }`}
                     >
+                      {/* 右上角"荐"角标 */}
+                      {featured && (
+                        <span className="absolute -top-px -right-px px-1.5 py-0.5 text-xs font-bold text-white bg-gradient-to-r from-orange-500 to-red-500 rounded-bl-lg rounded-tr-lg">
+                          荐
+                        </span>
+                      )}
                       <div className="flex items-start justify-between">
                         <div className="flex-1 min-w-0">
                           <div className="text-sm font-medium text-text-primary truncate">
